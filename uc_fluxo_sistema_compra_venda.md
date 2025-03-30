@@ -1,4 +1,4 @@
-# Diagrama de Casos de Uso
+# Diagrama de Caso de Uso
 
 # Grupo
 
