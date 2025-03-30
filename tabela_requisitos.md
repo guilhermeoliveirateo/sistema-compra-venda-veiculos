@@ -1,6 +1,6 @@
 # Tabela de Requisitos
 
-### Grupo
+# Grupo
 
 - Guilherme Teodoro de Oliveira RA: 10425362
 - Luís Henrique Ribeiro Fernandes RA: 10420079
