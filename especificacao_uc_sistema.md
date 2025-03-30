@@ -10,7 +10,7 @@
 
 # Descrição
 
-| Código / Nome do Caso de Uso | UC001 - Registrar Entrada de Hóspede |
+| Código / Nome do Caso de Uso | UC001 - Fazer Login |
 |-----------------------------|--------------------------------|
 | **Ator Principal**          | Comprador/Vendedor |
 | **Resumo**                  | Neste caso de uso, o usuário realiza o login na plataforma informando suas credenciais (e-mail e senha). Caso a senha esteja incorreta, uma mensagem de erro será exibida. |
@@ -21,7 +21,7 @@
 
 # Fluxo Principal
 
-| **Funcionário** | **Sistema** |
+| **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O usuário acessa a tela de login. | |
 | | 2. O sistema solicita e-mail e senha. |
@@ -33,7 +33,7 @@
 
 # Fluxo Alternativo - Senha incorreta
 
-| **Funcionário** | **Sistema** |
+| **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 4. | |
 | | 2. O sistema verifica que a senha está incorreta. |
