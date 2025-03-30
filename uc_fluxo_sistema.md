@@ -13,7 +13,7 @@ left to right direction
 actor "Comprador" as comprador
 actor "Vendedor" as vendedor
 
-rectangle "Sistema de venda e compra de veículos"{
+rectangle "Sistema de compra e venda de veículos"{
 usecase "Fazer login" as uc1
 usecase "Editar perfil" as uc2
 usecase "Criar anúncio" as uc3
