@@ -28,7 +28,6 @@ rectangle "Sistema de compra e venda de veículos"{
   usecase "Visualizar detalhes por compra" as uc12
 }
 
-right to left direction
 actor "API de pagamento" as pagamento
 actor "Sistema" as sistema
 left to right direction
