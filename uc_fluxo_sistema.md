@@ -1,4 +1,4 @@
-# Diagrama de Casos de Uso
+# Diagrama de Caso de Uso
 
 # Grupo
 
@@ -23,7 +23,7 @@ usecase "Buscar veículo" as uc6
 usecase "Verificar senha" as uc7
 usecase "Exibir mensagem de erro" as uc8
 usecase "Adicionar descrição" as uc9
-usecase "Definir preço do veículo" as uc10
+usecase "Adicionar preço do veículo" as uc10
 usecase "Alterar descrição" as uc11
 usecase "Alterar preço" as uc12
 usecase "Adicionar motivo da exclusão" as uc13
@@ -41,7 +41,7 @@ comprador -- uc16
 vendedor -- uc1
 comprador -- uc1
 uc1 ..> uc7 :<<include>>
-uc1 <.. uc8 :<<extends>>
+uc7 <.. uc8 :<<extends>>
 vendedor -- uc2
 comprador -- uc2
 vendedor -- uc3
