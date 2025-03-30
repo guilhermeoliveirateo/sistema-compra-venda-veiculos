@@ -34,6 +34,7 @@ usecase "Adicionar fotos" as uc17
 usecase "Adicionar localização" as uc18
 usecase "Alterar fotos" as uc19
 usecase "Alterar localização" as uc20
+usecase "Excluir perfil" as uc21
 }
 
 vendedor -- uc16
@@ -44,6 +45,10 @@ uc1 ..> uc7 :<<include>>
 uc7 <.. uc8 :<<extends>>
 vendedor -- uc2
 comprador -- uc2
+vendedor -- uc21
+comprador -- uc21
+uc21 ..> uc7 :<<include>>
+uc21 <.. uc8 :<<extends>>
 vendedor -- uc3
 uc3 ..> uc9 :<<include>>
 uc3 ..> uc10 :<<include>>
