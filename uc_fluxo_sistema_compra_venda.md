@@ -12,7 +12,6 @@
 left to right direction
 actor "Comprador" as comprador
 actor "Vendedor" as vendedor
-actor "Admin" as admin
 
 rectangle "Sistema de compra e venda de veículos"{
   usecase "Negociar condições de venda" as uc1
@@ -31,6 +30,7 @@ rectangle "Sistema de compra e venda de veículos"{
 
 actor "API de pagamento" as pagamento
 actor "Sistema" as sistema
+actor "Admin" as admin
 
 vendedor -- uc1
 comprador -- uc1
