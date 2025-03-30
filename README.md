@@ -24,7 +24,7 @@ de busca e histórico de negociações.
 
 - Histórico de Negociações: Acompanhamento das transações anteriores.
 
-- Admin: Controle de anúncios, usuários e segurança da plataforma.
+- Administração do Sistema: Controle de anúncios, usuários e segurança da plataforma.
 
 ### 👥 Grupo
 
