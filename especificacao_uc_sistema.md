@@ -133,10 +133,10 @@
 | 1. O vendedor acessa a lista de anúncios. | |
 | 2. O vendedor seleciona um anúncio para edição. | |
 | | 3. O sistema exibe os dados do anúncio. |
-| 4. O vendedor altera a descrição (inclui UC011 - "Alterar descrição"). | |
-| 5. O vendedor altera o preço (inclui UC012 - "Alterar preço"). | |
-| 6. O vendedor altera as fotos (inclui UC019 - "Alterar fotos"). | |
-| 7. O vendedor altera a localização (inclui UC020 - "Alterar localização"). | |
+| 4. O vendedor pode alterar a descrição (estende UC011 - "Alterar descrição"). | |
+| 5. O vendedor pode alterar o preço (estende UC012 - "Alterar preço"). | |
+| 6. O vendedor pode alterar as fotos (estende UC019 - "Alterar fotos"). | |
+| 7. O vendedor pode alterar a localização (estende UC020 - "Alterar localização"). | |
 | | 8. O sistema salva as alterações. |
 
 ---
