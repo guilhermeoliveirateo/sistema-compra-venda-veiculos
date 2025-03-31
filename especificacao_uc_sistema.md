@@ -41,3 +41,27 @@
 | 4. O usuário pode tentar novamente. |
 
 ---
+
+# UC002 - Editar Perfil
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC002 - Editar Perfil |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador/Vendedor |
+| **Resumo**                  | Neste caso de uso, o usuário pode editar informações do seu perfil. |
+| **Pré-condições**           | O usuário deve estar autenticado no sistema. |
+| **Pós-condições**           | O perfil do usuário é atualizado com as novas informações. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O usuário acessa a opção de editar perfil. | |
+| | 2. O sistema exibe as informações atuais do perfil. |
+| 3. O usuário altera os dados desejados. | |
+| | 4. O sistema salva as alterações. |
+
+---
