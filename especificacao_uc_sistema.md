@@ -671,24 +671,24 @@
 
 ---
 
-# Fluxo Alternativo 1 - Endereço inválido
+# Fluxo Alternativo 1 - Localização inválida
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 3. | |
-| | 2. O sistema detecta que o endereço inserido não é válido. |
-| | 3. O sistema solicita um novo endereço. |
+| | 2. O sistema detecta que a localização inserida não é válida. |
+| | 3. O sistema solicita uma nova localização. |
 | 4. O vendedor pode tentar novamente. | |
 
 ---
 
-# Fluxo Alternativo 2 - Nenhum endereço adicionado
+# Fluxo Alternativo 2 - Nenhuma localização adicionada
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 3. | |
-| 2. O vendedor não adiciona um endereço. | |
-| | 3. O sistema solicita um endereço. |
+| 2. O vendedor não adiciona uma localização. | |
+| | 3. O sistema solicita uma localização. |
 | 4. O vendedor pode tentar novamente. | |
 
 ---
@@ -746,6 +746,64 @@
 |---------------|-------------|
 | 1. O fluxo segue até o passo 3. | |
 | 2. O vendedor decide não modificar as fotos. | |
+| | 3. O sistema retorna à opção de editar anúncio sem alterações. |
+| 4. O vendedor pode continuar alterando os outros campos do anúncio. | |
+
+---
+
+# UC020 - Alterar Localização
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC020 - Alterar Localização |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode alterar a localização do veículo em um anúncio em edição. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema e o anúncio deve estar em processo de edição. |
+| **Pós-condições**           | A localização do anúncio é atualizada. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de editar o anúncio. | |
+| | 2. O sistema exibe a localização atual do veículo. |
+| 3. O vendedor insere a nova localização. | |
+| | 4. O sistema valida os dados e armazena a informação. |
+| | 5. O sistema confirma a atualização da localização. |
+
+---
+
+# Fluxo Alternativo 1 - Localização inválida
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| | 2. O sistema detecta que a localização inserida não é válida. |
+| | 3. O sistema solicita uma nova localização. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 2 - Nenhuma localização adicionada
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O vendedor não adiciona uma localização. | |
+| | 3. O sistema solicita uma localização. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 3 - Não alterar localização
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O vendedor decide não modificar a localização. | |
 | | 3. O sistema retorna à opção de editar anúncio sem alterações. |
 | 4. O vendedor pode continuar alterando os outros campos do anúncio. | |
 
