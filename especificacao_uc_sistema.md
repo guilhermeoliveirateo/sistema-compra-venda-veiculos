@@ -464,3 +464,49 @@
 | | 2. O sistema exibe o status atual da negociação. |
 
 ---
+
+# UC016 - Criar Perfil
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC016 - Criar Perfil |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador/Vendedor |
+| **Resumo**                  | Neste caso de uso, o usuário pode criar um perfil na plataforma. |
+| **Pré-condições**           | O usuário deseja utilizar o sistema. |
+| **Pós-condições**           | O perfil do usuário é criado. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O usuário acessa a opção de cadastro. | |
+| | 2. O sistema solicita informações pessoais. |
+| 3. O usuário preenche os dados. | |
+| 4. O usuário confirma a criação do perfil. | |
+| | 5. O sistema cria o perfil. |
+
+---
+
+# Fluxo Alternativo 1 - Cancelamento da criação
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O usuário decide não criar o perfil. | |
+| | 3. O sistema retorna à opção de cadastro sem alterações. |
+
+---
+
+# Fluxo Alternativo 2 - Perfil já existe
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 4. | |
+| | 2. O sistema identifica que o perfil já existe e não cria um novo. |
+| | 3. O sistema retorna à tela de login. |
+| 4. O usuário pode fazer o login em seu perfil. | |
+
+---
