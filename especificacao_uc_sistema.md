@@ -537,7 +537,7 @@
 
 # Descrição
 
-| Código / Nome do Caso de Uso | UC016 - Criar Perfil |
+| Código / Nome do Caso de Uso | UC017 - Adicionar Fotos |
 |-----------------------------|--------------------------------|
 | **Ator Principal**          | Vendedor |
 | **Resumo**                  | Neste caso de uso, o vendedor deve adicionar fotos ao seu anúncio de veículo para melhor apresentação aos compradores. |
@@ -568,3 +568,40 @@
 | 4. O vendedor pode tentar novamente. | |
 
 ---
+
+# UC018 - Adicionar Localização
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC018 - Adicionar Localização |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor deve adicionar a localização do veículo ao anúncio para que os compradores saibam onde ele está disponível. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema e o anúncio deve estar em processo de criação. |
+| **Pós-condições**           | A localização é adicionada ao anúncio e exibida para os compradores. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de adicionar localização ao anúncio. | |
+| | 2. O sistema exibe um campo para inserir a localização. |
+| 3. O vendedor informa a localização do veículo. | |
+| | 4. O sistema valida os dados e armazena a informação. |
+| | 5. O sistema confirma a adição da localização ao anúncio. |
+
+---
+
+# Fluxo Alternativo - Endereço inválido
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| | 2. O sistema detecta que o endereço inserido não é válido. |
+| | 3. O sistema solicita um novo endereço. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
