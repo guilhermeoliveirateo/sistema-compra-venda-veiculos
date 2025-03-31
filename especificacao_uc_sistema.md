@@ -66,6 +66,16 @@
 
 ---
 
+# Fluxo Alternativo - Cancelamento da edição
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O usuário decide não editar o perfil e cancela a operação. | |
+| | 3. O sistema retorna à opção de editar perfil sem alterações. |
+
+---
+
 # UC003 - Criar Anúncio
 
 # Descrição
@@ -93,6 +103,16 @@
 
 ---
 
+# Fluxo Alternativo - Cancelamento da criação
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 6. | |
+| 2. O vendedor decide não criar o anúncio e cancela a operação. | |
+| | 3. O sistema retorna à lista de anúncios sem alterações. |
+
+---
+
 # UC004 - Editar Anúncio
 
 # Descrição
@@ -110,7 +130,7 @@
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
-| 1. O vendedor acessa a lista de anúncios criados. | |
+| 1. O vendedor acessa a lista de anúncios. | |
 | 2. O vendedor seleciona um anúncio para edição. | |
 | | 3. O sistema exibe os dados do anúncio. |
 | 4. O vendedor altera a descrição (inclui UC011 - "Alterar descrição"). | |
@@ -118,5 +138,50 @@
 | 6. O vendedor altera as fotos (inclui UC019 - "Alterar fotos"). | |
 | 7. O vendedor altera a localização (inclui UC020 - "Alterar localização"). | |
 | | 8. O sistema salva as alterações. |
+
+---
+
+# Fluxo Alternativo - Cancelamento da edição
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 7. | |
+| 2. O vendedor decide não editar o anúncio e cancela a operação. | |
+| | 3. O sistema retorna à lista de anúncios sem alterações. |
+
+---
+
+# UC005 - Remover Anúncio
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC005 - Remover Anúncio |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode excluir um anúncio de sua conta, informando o motivo da exclusão. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema e o anúncio deve estar ativo. |
+| **Pós-condições**           | O anúncio é removido do sistema. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a lista de anúncios. | |
+| 2. O vendedor seleciona um anúncio para remoção. | |
+| | 3. O sistema solicita o motivo da exclusão (inclui UC013 - "Adicionar motivo da exclusão"). |
+| 4. O vendedor informa o motivo e confirma a exclusão. | |
+| | 5. O sistema remove o anúncio da plataforma. |
+
+---
+
+# Fluxo Alternativo - Cancelamento da remoção
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O vendedor decide não remover o anúncio e cancela a operação. | |
+| | 3. O sistema retorna à lista de anúncios sem alterações. |
 
 ---
