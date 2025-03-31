@@ -37,6 +37,8 @@ usecase "Alterar localização" as uc20
 usecase "Excluir perfil" as uc21
 }
 
+actor "Sistema" as sistema
+
 vendedor -- uc16
 comprador -- uc16
 vendedor -- uc1
@@ -72,6 +74,8 @@ uc6 <.. uc14 :<<extends>>
 uc14 <.. uc15 :<<extends>>
 uc4 ..> uc3 :<<include>>
 uc5 ..> uc3 :<<include>>
+sistema -- uc7
+sistema -- uc8
  
 @enduml
 ```
