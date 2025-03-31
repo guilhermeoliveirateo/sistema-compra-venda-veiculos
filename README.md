@@ -1,6 +1,6 @@
 # 🚗 Sistema de Compra e Venda de Veículos
 
-## 📌 Definição do Projeto
+# 📌 Definição do Projeto
 
 O Sistema de Compra e Venda de Veículos é uma plataforma que 
 conecta compradores e vendedores de carros, motos e caminhões.
@@ -10,7 +10,7 @@ A plataforma também oferece acompanhamento em tempo real
 de pagamentos e transações, além de funcionalidades avançadas 
 de busca e histórico de negociações.
 
-## 🛠 Funcionalidades Principais
+# 🛠 Funcionalidades Principais
 
 - Cadastro e Login: Usuários podem se registrar e gerenciar suas contas.
 
@@ -26,7 +26,7 @@ de busca e histórico de negociações.
 
 - Administração do Sistema: Controle de anúncios, usuários e segurança da plataforma.
 
-### 👥 Grupo
+# 👥 Grupo
 
 - Guilherme Teodoro de Oliveira RA: 10425362
 - Luís Henrique Ribeiro Fernandes RA: 10420079
