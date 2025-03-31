@@ -190,7 +190,7 @@
 
 # Descrição
 
-| Código / Nome do Caso de Uso | UC005 - Remover Anúncio |
+| Código / Nome do Caso de Uso | UC006 - Buscar Veículo |
 |-----------------------------|--------------------------------|
 | **Ator Principal**          | Comprador |
 | **Resumo**                  | Neste caso de uso, o comprador pode buscar veículos disponíveis na plataforma usando filtros como descrição, preço e localização. |
