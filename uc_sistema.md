@@ -50,7 +50,6 @@ uc1 <.. uc3 :<<include>>
 uc1 <.. uc4 :<<include>>
 uc1 <.. uc5 :<<include>>
 uc1 <.. uc6 :<<include>>
-uc1 <.. uc16 :<<include>>
 uc1 <.. uc21 :<<include>>
 vendedor -- uc2
 comprador -- uc2
