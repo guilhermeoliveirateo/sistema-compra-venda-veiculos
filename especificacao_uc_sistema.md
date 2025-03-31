@@ -808,3 +808,38 @@
 | 4. O vendedor pode continuar alterando os outros campos do anúncio. | |
 
 ---
+
+# UC021 - Excluir Perfil
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC021 - Excluir Perfil |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador/Vendedor |
+| **Resumo**                  | Neste caso de uso, o usuário pode excluir sua conta do sistema, removendo todos os seus dados. |
+| **Pré-condições**           | O usuário deve estar autenticado no sistema. |
+| **Pós-condições**           | O perfil do usuário é excluído e todos os seus dados são removidos. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O usuário acessa a opção de excluir perfil. | |
+| | 2. O sistema solicita confirmação da exclusão. |
+| 3. O usuário confirma a exclusão. | |
+| | 4. O sistema remove todos os dados associados ao usuário. |
+| | 5. O sistema confirma a exclusão. |
+
+---
+
+# Fluxo Alternativo - Cancelamento da exclusão
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O usuário decide não excluir o perfil e cancela a operação. | |
+| | 3. O sistema retorna à página inicial sem alterações. |
+
+---
