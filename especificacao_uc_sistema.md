@@ -298,13 +298,24 @@
 
 ---
 
-# Fluxo Alternativo - Descrição inválida
+# Fluxo Alternativo 1 - Descrição inválida
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 2. | |
 | | 2. O sistema detecta que a descrição é inválida. |
 | | 3. O sistema solicita uma nova descrição. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 2 - Nenhuma descrição adicionada
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O vendedor não adiciona uma descrição. | |
+| | 3. O sistema solicita uma descrição. |
 | 4. O vendedor pode tentar novamente. | |
 
 ---
@@ -331,13 +342,24 @@
 
 ---
 
-# Fluxo Alternativo - Preço inválido
+# Fluxo Alternativo 1 - Preço inválido
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 1. | |
 | | 2. O sistema detecta que o preço do veículo é inválido. |
 | | 3. O sistema solicita um novo preço. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 2 - Nenhum preço adicionado
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 1. | |
+| 2. O vendedor não adiciona um preço. | |
+| | 3. O sistema solicita um preço. |
 | 4. O vendedor pode tentar novamente. | |
 
 ---
@@ -365,7 +387,29 @@
 
 ---
 
-# Fluxo Alternativo - Não alterar descrição
+# Fluxo Alternativo 1 - Descrição inválida
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| | 2. O sistema detecta que a descrição é inválida. |
+| | 3. O sistema solicita uma nova descrição. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 2 - Nenhuma descrição adicionada
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O vendedor não adiciona uma nova descrição. | |
+| | 3. O sistema solicita uma descrição. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 3 - Não alterar descrição
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
@@ -399,7 +443,29 @@
 
 ---
 
-# Fluxo Alternativo - Não alterar preço
+# Fluxo Alternativo 1 - Preço inválido
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| | 2. O sistema detecta que o preço é inválido. |
+| | 3. O sistema solicita um novo preço. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 2 - Nenhum preço adicionado
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O vendedor não adiciona um novo preço. | |
+| | 3. O sistema solicita um novo preço. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 3 - Não alterar preço
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
@@ -558,13 +624,24 @@
 
 ---
 
-# Fluxo Alternativo - Formato inválido
+# Fluxo Alternativo 1 - Formato inválido
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 3. | |
 | | 2. O sistema detecta que o formato da imagem não é aceito. |
 | | 3. O sistema solicita novas imagens. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 2 - Nenhuma foto adicionada
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O vendedor não adiciona novas imagens. | |
+| | 3. O sistema solicita pelo menos uma imagem. |
 | 4. O vendedor pode tentar novamente. | |
 
 ---
@@ -594,7 +671,7 @@
 
 ---
 
-# Fluxo Alternativo - Endereço inválido
+# Fluxo Alternativo 1 - Endereço inválido
 
 | **Usuário** | **Sistema** |
 |---------------|-------------|
@@ -605,3 +682,71 @@
 
 ---
 
+# Fluxo Alternativo 2 - Nenhum endereço adicionado
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O vendedor não adiciona um endereço. | |
+| | 3. O sistema solicita um endereço. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# UC019 - Alterar Fotos
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC019 - Alterar Fotos |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode alterar as fotos de um anúncio existente para atualizar a apresentação do veículo. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema e o anúncio deve estar em processo de edição. |
+| **Pós-condições**           | As fotos do anúncio são atualizadas. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de editar o anúncio. | |
+| | 2. O sistema exibe as fotos atuais do anúncio. |
+| 3. O vendedor remove ou substitui as fotos desejadas. | |
+| | 4. O sistema valida e armazena as novas imagens. |
+| | 5. O sistema confirma a atualização das fotos. |
+
+---
+
+# Fluxo Alternativo 1 - Formato inválido
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| | 2. O sistema detecta que o formato da imagem não é aceito. |
+| | 3. O sistema solicita novas imagens. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 2 - Nenhuma foto adicionada
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O vendedor não adiciona novas imagens. | |
+| | 3. O sistema solicita pelo menos uma imagem. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
+# Fluxo Alternativo 3 - Não alterar fotos
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| 2. O vendedor decide não modificar as fotos. | |
+| | 3. O sistema retorna à opção de editar anúncio sem alterações. |
+| 4. O vendedor pode continuar alterando os outros campos do anúncio. | |
+
+---
