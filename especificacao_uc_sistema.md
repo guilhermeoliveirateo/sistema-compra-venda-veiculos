@@ -185,3 +185,36 @@
 | | 3. O sistema retorna à lista de anúncios sem alterações. |
 
 ---
+
+# UC006 - Buscar Veículo
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC005 - Remover Anúncio |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador |
+| **Resumo**                  | Neste caso de uso, o comprador pode buscar veículos disponíveis na plataforma usando filtros como descrição, preço e localização. |
+| **Pré-condições**           | O comprador deve estar autenticado no sistema. |
+| **Pós-condições**           | O comprador visualiza uma lista de veículos compatíveis com sua busca. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O comprador acessa a opção de busca. | |
+| 2. O comprador define os filtros desejados. | |
+| | 3. O sistema exibe uma lista de veículos correspondentes. |
+
+---
+
+# Fluxo Alternativo - Nenhum veículo encontrado
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| | 2. O sistema informa que não há veículos compatíveis. |
+| 3. O comprador pode ajustar os filtros e tentar novamente. | |
+
+---
