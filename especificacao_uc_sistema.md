@@ -274,3 +274,26 @@
 | | 2. O sistema exibe uma mensagem de senha incorreta. |
 
 ---
+
+# UC009 - Adicionar Descrição
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC009 - Adicionar Descrição |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor deve adicionar uma descrição ao criar um anúncio de veículo. |
+| **Pré-condições**           | O vendedor está criando um anúncio. |
+| **Pós-condições**           | A descrição é adicionada ao anúncio. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de criar anúncio. | |
+| 2. O vendedor insere a descrição do veículo. | |
+| | 3. O sistema salva a descrição no anúncio. |
+
+---
