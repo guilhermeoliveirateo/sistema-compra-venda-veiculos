@@ -319,3 +319,71 @@
 | | 2. O sistema salva o preço no anúncio. |
 
 ---
+
+# UC011 - Alterar Descrição
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC011 - Alterar Descrição |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode modificar a descrição de um anúncio já publicado. |
+| **Pré-condições**           | O vendedor possui um anúncio ativo na plataforma. |
+| **Pós-condições**           | A descrição do anúncio é atualizada. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de editar anúncio. | |
+| 2. O vendedor modifica a descrição. |
+| | 3. O sistema salva as alterações. |
+
+---
+
+# Fluxo Alternativo - Não alterar descrição
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O vendedor decide não modificar a descrição. |
+| | 3. O sistema retorna à opção de editar anúncio sem alterações. |
+| 4. O vendedor pode continuar alterando os outros campos do anúncio. |
+
+---
+
+# UC012 - Alterar Preço
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC012 - Alterar Preço |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode modificar o preço de um veículo já anunciado. |
+| **Pré-condições**           | O vendedor possui um anúncio ativo na plataforma. |
+| **Pós-condições**           | O preço do veículo é atualizado. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de editar anúncio. | |
+| 2. O vendedor altera o preço. |
+| | 3. O sistema salva as alterações. |
+
+---
+
+# Fluxo Alternativo - Não alterar preço
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O vendedor decide não modificar o preço. |
+| | 3. O sistema retorna à opção de editar anúncio sem alterações. |
+| 4. O vendedor pode continuar alterando os outros campos do anúncio. |
+
+---
