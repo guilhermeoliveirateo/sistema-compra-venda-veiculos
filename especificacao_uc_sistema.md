@@ -298,6 +298,17 @@
 
 ---
 
+# Fluxo Alternativo - Descrição inválida
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| | 2. O sistema detecta que a descrição é inválida. |
+| | 3. O sistema solicita uma nova descrição. |
+| 4. O vendedor pode tentar novamente. | |
+
+---
+
 # UC010 - Adicionar Preço do Veículo
 
 # Descrição
@@ -317,6 +328,17 @@
 |---------------|-------------|
 | 1. O vendedor insere o valor do veículo. | |
 | | 2. O sistema salva o preço no anúncio. |
+
+---
+
+# Fluxo Alternativo - Preço inválido
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 1. | |
+| | 2. O sistema detecta que o preço do veículo é inválido. |
+| | 3. O sistema solicita um novo preço. |
+| 4. O vendedor pode tentar novamente. | |
 
 ---
 
@@ -508,5 +530,41 @@
 | | 2. O sistema identifica que o perfil já existe e não cria um novo. |
 | | 3. O sistema retorna à tela de login. |
 | 4. O usuário pode fazer o login em seu perfil. | |
+
+---
+
+# UC017 - Adicionar Fotos
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC016 - Criar Perfil |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor deve adicionar fotos ao seu anúncio de veículo para melhor apresentação aos compradores. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema e o anúncio deve estar em processo de criação. |
+| **Pós-condições**           | As fotos são adicionadas ao anúncio e ficam visíveis para os compradores. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de adicionar fotos ao anúncio. | |
+| | 2. O sistema exibe a interface para upload de imagens. |
+| 3. O vendedor seleciona as fotos desejadas. | |
+| | 4. O sistema valida e armazena as imagens. |
+| | 5. O sistema confirma a adição das fotos ao anúncio. |
+
+---
+
+# Fluxo Alternativo - Formato inválido
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| | 2. O sistema detecta que o formato da imagem não é aceito. |
+| | 3. O sistema solicita novas imagens. |
+| 4. O vendedor pode tentar novamente. | |
 
 ---
