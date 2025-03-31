@@ -338,7 +338,7 @@
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O vendedor acessa a opção de editar anúncio. | |
-| 2. O vendedor modifica a descrição. |
+| 2. O vendedor modifica a descrição. | |
 | | 3. O sistema salva as alterações. |
 
 ---
@@ -348,9 +348,9 @@
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 2. | |
-| 2. O vendedor decide não modificar a descrição. |
+| 2. O vendedor decide não modificar a descrição. | |
 | | 3. O sistema retorna à opção de editar anúncio sem alterações. |
-| 4. O vendedor pode continuar alterando os outros campos do anúncio. |
+| 4. O vendedor pode continuar alterando os outros campos do anúncio. | |
 
 ---
 
@@ -372,7 +372,7 @@
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O vendedor acessa a opção de editar anúncio. | |
-| 2. O vendedor altera o preço. |
+| 2. O vendedor altera o preço. | |
 | | 3. O sistema salva as alterações. |
 
 ---
@@ -382,8 +382,41 @@
 | **Usuário** | **Sistema** |
 |---------------|-------------|
 | 1. O fluxo segue até o passo 2. | |
-| 2. O vendedor decide não modificar o preço. |
+| 2. O vendedor decide não modificar o preço. | |
 | | 3. O sistema retorna à opção de editar anúncio sem alterações. |
-| 4. O vendedor pode continuar alterando os outros campos do anúncio. |
+| 4. O vendedor pode continuar alterando os outros campos do anúncio. | |
+
+---
+
+# UC013 - Adicionar Motivo da Exclusão
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC013 - Adicionar Motivo da Exclusão |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor deve informar um motivo ao excluir um anúncio. |
+| **Pré-condições**           | O vendedor decidiu excluir um anúncio. |
+| **Pós-condições**           | O motivo da exclusão é registrado. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de excluir anúncio. | |
+| | 2. O sistema solicita o motivo da exclusão. |
+| 3. O vendedor insere o motivo e confirma a exclusão. | |
+
+---
+
+# Fluxo Alternativo - Não remover anúncio
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O vendedor decide não excluir o anúncio. | |
+| | 3. O sistema retorna à opção de excluir anúncio sem alterações. |
 
 ---
