@@ -37,8 +37,8 @@
 |---------------|-------------|
 | 1. O fluxo segue até o passo 4. | |
 | | 2. O sistema verifica que a senha está incorreta. |
-| | 3. O sistema exibe uma mensagem de erro (estende UC008 - "Exibir mensagem de erro"). | |
-| 4. O usuário pode tentar novamente. |
+| | 3. O sistema exibe uma mensagem de erro (estende UC008 - "Exibir mensagem de erro"). |
+| 4. O usuário pode tentar novamente. | |
 
 ---
 
@@ -86,9 +86,37 @@
 | 1. O vendedor acessa a opção de criar anúncio. | |
 | | 2. O sistema exibe um formulário para preenchimento dos dados. |
 | 3. O vendedor adiciona a descrição (inclui UC009 - "Adicionar descrição"). | |
-| 4. O vendedor define o preço (inclui UC010 - "Adicionar preço do veículo"). |
-| 5. O vendedor adiciona fotos (inclui UC017 - "Adicionar fotos"). |
-| 6. O vendedor informa a localização (inclui UC018 - "Adicionar localização"). |
+| 4. O vendedor define o preço (inclui UC010 - "Adicionar preço do veículo"). | |
+| 5. O vendedor adiciona fotos (inclui UC017 - "Adicionar fotos"). | |
+| 6. O vendedor informa a localização (inclui UC018 - "Adicionar localização"). | |
 | | 7. O sistema salva os dados e publica o anúncio. |
+
+---
+
+# UC004 - Editar Anúncio
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC004 - Editar Anúncio |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode editar um anúncio já publicado, alterando descrição, preço, fotos e localização. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema e o anúncio deve estar ativo. |
+| **Pós-condições**           | As informações do anúncio são atualizadas. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a lista de anúncios criados. | |
+| 2. O vendedor seleciona um anúncio para edição. | |
+| | 3. O sistema exibe os dados do anúncio. |
+| 4. O vendedor altera a descrição (inclui UC011 - "Alterar descrição"). | |
+| 5. O vendedor altera o preço (inclui UC012 - "Alterar preço"). | |
+| 6. O vendedor altera as fotos (inclui UC019 - "Alterar fotos"). | |
+| 7. O vendedor altera a localização (inclui UC020 - "Alterar localização"). | |
+| | 8. O sistema salva as alterações. |
 
 ---
