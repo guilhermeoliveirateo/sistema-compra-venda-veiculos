@@ -65,3 +65,30 @@
 | | 4. O sistema salva as alterações. |
 
 ---
+
+# UC003 - Criar Anúncio
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC003 - Criar Anúncio |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode criar um anúncio para vender um veículo, informando descrição, preço, fotos e localização. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema. |
+| **Pós-condições**           | O anúncio é criado e publicado na plataforma. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de criar anúncio. | |
+| | 2. O sistema exibe um formulário para preenchimento dos dados. |
+| 3. O vendedor adiciona a descrição (inclui UC009 - "Adicionar descrição"). | |
+| 4. O vendedor define o preço (inclui UC010 - "Adicionar preço do veículo"). |
+| 5. O vendedor adiciona fotos (inclui UC017 - "Adicionar fotos"). |
+| 6. O vendedor informa a localização (inclui UC018 - "Adicionar localização"). |
+| | 7. O sistema salva os dados e publica o anúncio. |
+
+---
