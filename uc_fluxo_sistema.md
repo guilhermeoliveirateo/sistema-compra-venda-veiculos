@@ -43,6 +43,13 @@ vendedor -- uc1
 comprador -- uc1
 uc1 ..> uc7 :<<include>>
 uc7 <.. uc8 :<<extends>>
+uc1 <.. uc2 :<<include>>
+uc1 <.. uc3 :<<include>>
+uc1 <.. uc4 :<<include>>
+uc1 <.. uc5 :<<include>>
+uc1 <.. uc6 :<<include>>
+uc1 <.. uc16 :<<include>>
+uc1 <.. uc21 :<<include>>
 vendedor -- uc2
 comprador -- uc2
 vendedor -- uc21
