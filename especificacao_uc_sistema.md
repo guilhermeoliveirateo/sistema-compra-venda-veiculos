@@ -218,3 +218,37 @@
 | 3. O comprador pode ajustar os filtros e tentar novamente. | |
 
 ---
+
+# UC007 - Verificar Senha
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC007 - Verificar Senha |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Sistema |
+| **Resumo**                  | Neste caso de uso, ocorre a verificação se a senha fornecida pelo usuário corresponde à senha armazenada no sistema. |
+| **Pré-condições**           | O usuário deve ter informado um e-mail cadastrado na plataforma. |
+| **Pós-condições**           | O sistema confirma a senha ou informa que ela está incorreta. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O usuário insere o e-mail e senha. | |
+| | 2. O sistema verifica se a senha está correta. |
+| | 3. Se correta, o sistema permite o login. |
+
+---
+
+# Fluxo Alternativo - Senha incorreta
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| | 2. O sistema detecta que a senha está incorreta. |
+| | 3. O sistema exibe uma mensagem de erro (estende UC008 - "Exibir mensagem de erro"). |
+| 4. O usuário pode tentar novamente. | |
+
+---
