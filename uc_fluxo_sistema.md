@@ -61,10 +61,10 @@ uc3 ..> uc10 :<<include>>
 uc3 ..> uc17 :<<include>>
 uc3 ..> uc18 :<<include>>
 vendedor -- uc4
-uc4 ..> uc11 :<<include>>
-uc4 ..> uc12 :<<include>>
-uc4 ..> uc19 :<<include>>
-uc4 ..> uc20 :<<include>>
+uc4 ..> uc11 :<<extends>>
+uc4 ..> uc12 :<<extends>>
+uc4 ..> uc19 :<<extends>>
+uc4 ..> uc20 :<<extends>>
 vendedor -- uc5
 uc5 ..> uc13 :<<include>>
 comprador -- uc6
