@@ -55,7 +55,6 @@ vendedor -- uc2
 comprador -- uc2
 vendedor -- uc21
 comprador -- uc21
-uc21 ..> uc7 :<<include>>
 vendedor -- uc3
 uc3 ..> uc9 :<<include>>
 uc3 ..> uc10 :<<include>>
