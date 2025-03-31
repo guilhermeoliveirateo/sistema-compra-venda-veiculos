@@ -99,3 +99,49 @@
 | | 5. O sistema notifica a confirmação da venda (inclui UC007 - "Notificar Confirmação"). |
 
 ---
+
+# UC004 - Consultar Histórico de Vendas
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC004 - Consultar Histórico de Vendas |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode acessar o histórico de veículos vendidos na plataforma. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema. |
+| **Pós-condições**           | O histórico de vendas é exibido. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de histórico de vendas. | |
+| | 2. O sistema exibe uma lista dos veículos vendidos. |
+| 3. O vendedor pode visualizar detalhes específicos (extende UC009 - "Visualizar Detalhes por Venda"). | |
+
+---
+
+# UC005 - Consultar Histórico de Compras
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC005 - Consultar Histórico de Compras |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador |
+| **Resumo**                  | Neste caso de uso, o comprador pode acessar o histórico de veículos adquiridos na plataforma. |
+| **Pré-condições**           | O comprador deve estar autenticado no sistema. |
+| **Pós-condições**           | O histórico de compras é exibido. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O comprador acessa a opção de histórico de compras. | |
+| | 2. O sistema exibe uma lista dos veículos adquiridos. |
+| 3. O comprador pode visualizar detalhes específicos (extende UC012 - "Visualizar Detalhes por Compra"). | |
+
+---
