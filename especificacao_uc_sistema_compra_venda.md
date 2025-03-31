@@ -145,3 +145,37 @@
 | 3. O comprador pode visualizar detalhes específicos (extende UC012 - "Visualizar Detalhes por Compra"). | |
 
 ---
+
+# UC006 - Verificar Pagamento
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC006 - Verificar Pagamento |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | API de Pagamento |
+| **Resumo**                  | Neste caso de uso, a API de pagamento verifica a confirmação do pagamento antes de concluir a venda de um veículo. |
+| **Pré-condições**           | O pagamento deve ter sido iniciado. |
+| **Pós-condições**           | A API de pagamento confirma ou rejeita a transação com base no status do pagamento. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O usuário realiza o pagamento. | |
+| | 2. A API de pagamento verifica e retorna o status do pagamento. |
+| | 3. A API de pagamento confirma ou rejeita o pagamento. |
+
+---
+
+# Fluxo Alternativo - Pagamento recusado
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 3. | |
+| | 2. A API de pagamento retorna que o pagamento foi recusado. |
+| | 3. O sistema permite uma nova tentativa. |
+| 4. O usuário pode tentar novamente. | |
+
+---
