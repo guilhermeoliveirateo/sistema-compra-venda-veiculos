@@ -252,3 +252,25 @@
 | 4. O usuário pode tentar novamente. | |
 
 ---
+
+# UC008 - Exibir Mensagem de Erro
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC008 - Exibir Mensagem de Erro |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Sistema |
+| **Resumo**                  | Neste caso de uso, ocorre a exibição de uma mensagem de erro para informar o usuário sobre problemas encontrados na senha informada. |
+| **Pré-condições**           | O usuário inseriu uma senha incorreta para realizar o login. |
+| **Pós-condições**           | O usuário recebe uma mensagem de erro sobre a senha incorreta. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| | 1. O sistema detecta um erro na senha informada pelo usuário durante o login. |
+| | 2. O sistema exibe uma mensagem de senha incorreta. |
+
+---
