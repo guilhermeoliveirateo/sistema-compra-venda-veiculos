@@ -70,6 +70,8 @@ uc5 ..> uc13 :<<include>>
 comprador -- uc6
 uc6 <.. uc14 :<<extends>>
 uc14 <.. uc15 :<<extends>>
+uc4 ..> uc3 :<<include>>
+uc5 ..> uc3 :<<include>>
  
 @enduml
 ```
