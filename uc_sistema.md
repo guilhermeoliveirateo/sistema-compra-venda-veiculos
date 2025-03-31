@@ -76,6 +76,8 @@ uc4 ..> uc3 :<<include>>
 uc5 ..> uc3 :<<include>>
 sistema -- uc7
 sistema -- uc8
+uc2 ..> uc16 <<include>>
+uc21 ..> uc16 <<include>>
  
 @enduml
 ```
