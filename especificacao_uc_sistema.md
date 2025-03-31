@@ -297,3 +297,25 @@
 | | 3. O sistema salva a descrição no anúncio. |
 
 ---
+
+# UC010 - Adicionar Preço do Veículo
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC010 - Adicionar Preço do Veículo |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor deve adicionar um preço de venda ao criar um anúncio de veículo. |
+| **Pré-condições**           | O vendedor está criando um anúncio. |
+| **Pós-condições**           | O preço do veículo é adicionado no anúncio. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor insere o valor do veículo. | |
+| | 2. O sistema salva o preço no anúncio. |
+
+---
