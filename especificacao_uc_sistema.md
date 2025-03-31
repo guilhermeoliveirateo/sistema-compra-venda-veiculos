@@ -417,6 +417,50 @@
 |---------------|-------------|
 | 1. O fluxo segue até o passo 2. | |
 | 2. O vendedor decide não excluir o anúncio. | |
-| | 3. O sistema retorna à opção de excluir anúncio sem alterações. |
+| | 3. O sistema retorna à lista de anúncios sem alterações. |
+
+---
+
+# UC014 - Visualizar Detalhes
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC014 - Visualizar Detalhes |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador |
+| **Resumo**                  | Neste caso de uso, o comprador pode visualizar os detalhes de um veículo anunciado. |
+| **Pré-condições**           | O comprador acessa um anúncio. |
+| **Pós-condições**           | O sistema exibe todas as informações do veículo. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O comprador acessa um anúncio. | |
+| | 2. O sistema exibe os detalhes do veículo. |
+
+---
+
+# UC015 - Acompanhar Status
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC015 - Acompanhar Status |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador |
+| **Resumo**                  | Neste caso de uso, o comprador pode acompanhar o status do veículo. |
+| **Pré-condições**           | O comprador demonstrou interesse em um anúncio. |
+| **Pós-condições**           | O comprador pode visualizar o status atualizado do veículo. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O comprador acessa a opção de acompanhar status. | |
+| | 2. O sistema exibe o status atual da negociação. |
 
 ---
