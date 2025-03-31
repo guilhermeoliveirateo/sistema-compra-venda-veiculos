@@ -179,3 +179,221 @@
 | 4. O usuário pode tentar novamente. | |
 
 ---
+
+# UC007 - Notificar Confirmação
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC007 - Notificar Confirmação |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Sistema |
+| **Resumo**                  | Neste caso de uso, o sistema notifica o vendedor e o comprador sobre a conclusão da venda do veículo. |
+| **Pré-condições**           | O veículo deve estar marcado como vendido. |
+| **Pós-condições**           | O comprador e o vendedor recebem a notificação de confirmação. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| | 1. O sistema verifica o status do veículo. |
+| | 2. O sistema envia uma notificação ao comprador e ao vendedor informando a finalização da venda. |
+
+---
+
+# Fluxo Alternativo - Falha na Notificação
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| | 1. O sistema tenta enviar a notificação. |
+| | 2. Caso ocorra uma falha no envio, o sistema armazena a notificação para nova tentativa posterior. |
+
+---
+
+# UC008 - Alterar Status do Veículo
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC008 - Alterar Status do Veículo |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Sistema |
+| **Resumo**                  | Neste caso de uso, o sistema altera o status de um veículo quando ele é vendido. |
+| **Pré-condições**           | O veículo deve estar cadastrado no sistema e marcado pelo vendedor como vendido. |
+| **Pós-condições**           | O status do veículo é atualizado para "Vendido". |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| | 1. O sistema recebe a solicitação para alteração do status do veículo. |
+| | 2. O sistema atualiza o status do veículo. |
+
+---
+
+# Fluxo Alternativo - Falha na Atualização
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| | 1. O sistema tenta atualizar o status do veículo. |
+| | 2. Caso ocorra um erro, o sistema registra a falha e não atualiza o status do veículo. |
+
+---
+
+# UC009 - Visualizar Detalhes por Venda
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC009 - Visualizar Detalhes por Venda |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Vendedor |
+| **Resumo**                  | Neste caso de uso, o vendedor pode acessar os detalhes específicos de uma venda realizada. |
+| **Pré-condições**           | O vendedor deve estar autenticado no sistema e a venda deve existir. |
+| **Pós-condições**           | Os detalhes da venda são exibidos. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor acessa a opção de histórico de vendas. | |
+| 2. O vendedor seleciona uma venda específica. | |
+| | 3. O sistema exibe os detalhes da transação. |
+
+---
+
+# Fluxo Alternativo - Venda Não Encontrada
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O vendedor tenta acessar os detalhes de uma venda. | |
+| | 2. O sistema não encontra a venda. |
+| | 3. O sistema retorna à opção de histórico de vendas. |
+
+---
+
+# UC010 - Gerenciar Usuários
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC010 - Gerenciar Usuários |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Admin |
+| **Resumo**                  | Neste caso de uso, o administrador pode gerenciar os usuários cadastrados no sistema. |
+| **Pré-condições**           | O administrador deve estar autenticado no sistema. |
+| **Pós-condições**           | O usuário pode ser editado ou excluído. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O administrador acessa a opção de gerenciamento de usuários. | |
+| | 2. O sistema exibe a lista de usuários cadastrados. |
+| 3. O administrador pode visualizar, editar ou excluir um usuário. | |
+
+---
+
+# Fluxo Alternativo 1 - Erro na Edição/Exclusão
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O administrador tenta editar ou excluir um usuário. | |
+| | 3. O sistema encontra um erro durante o processo de edição/exclusão. |
+| | 4. O sistema retorna à opção de gerenciamento de usuários. |
+
+---
+
+# Fluxo Alternativo 2 - Usuário Não Encontrado
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O administrador tenta gerenciar um usuário inexistente. | |
+| | 3. O sistema informa que o usuário não foi encontrado. |
+| | 4. O sistema retorna à opção de gerenciamento de usuários. |
+
+---
+
+# UC011 - Gerenciar Anúncios
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC011 - Gerenciar Anúncios |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Admin |
+| **Resumo**                  | Neste caso de uso, o administrador pode gerenciar os anúncios publicados na plataforma. |
+| **Pré-condições**           | O administrador deve estar autenticado no sistema. |
+| **Pós-condições**           | Os anúncios podem ser removidos ou modificados. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O administrador acessa a opção de gerenciamento de anúncios. | |
+| | 2. O sistema exibe a lista de anúncios ativos. |
+| 3. O administrador pode visualizar, editar ou remover um anúncio. | |
+
+---
+
+# Fluxo Alternativo 1 - Erro na Edição/Exclusão
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O administrador tenta editar ou excluir um anúncio. | |
+| | 3. O sistema encontra um erro durante o processo de edição/exclusão. |
+| | 4. O sistema retorna à opção de gerenciamento de anúncios. |
+
+---
+
+# Fluxo Alternativo 2 - Anúncio Não Encontrado
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O fluxo segue até o passo 2. | |
+| 2. O administrador tenta gerenciar um anúncio inexistente. | |
+| | 3. O sistema informa que o anúncio não foi encontrado. |
+| | 4. O sistema retorna à opção de gerenciamento de anúncios. |
+
+---
+
+# UC012 - Visualizar Detalhes por Compra
+
+# Descrição
+
+| Código / Nome do Caso de Uso | UC012 - Visualizar Detalhes por Compra |
+|-----------------------------|--------------------------------|
+| **Ator Principal**          | Comprador |
+| **Resumo**                  | Neste caso de uso, o comprador pode acessar os detalhes específicos de uma compra realizada. |
+| **Pré-condições**           | O comprador deve estar autenticado no sistema. |
+| **Pós-condições**           | Os detalhes da compra são exibidos. |
+
+---
+
+# Fluxo Principal
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O comprador acessa a opção de histórico de compras. | |
+| 2. O comprador seleciona uma compra específica. | |
+| | 3. O sistema exibe os detalhes da transação. |
+
+---
+
+# Fluxo Alternativo - Compra Não Encontrada
+
+| **Usuário** | **Sistema** |
+|---------------|-------------|
+| 1. O comprador tenta acessar os detalhes de uma compra. | |
+| | 2. O sistema não encontra a compra. |
+| | 3. O sistema retorna à opção de histórico de compras. |
+
+---
