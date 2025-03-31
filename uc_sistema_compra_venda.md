@@ -46,8 +46,8 @@ vendedor -- uc4
 uc4 <.. uc9 :<<extends>>
 comprador -- uc5
 uc5 <.. uc12 :<<extends>>
-uc10 -- admin
-uc11 -- admin
+admin -- uc10
+admin -- uc11
 
 sistema -[hidden]-> admin
 pagamento -[hidden]-> admin
