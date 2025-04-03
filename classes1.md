@@ -1,6 +1,5 @@
 '''
 @startuml
-' Definição das classes principais
 class Usuario {
     - id: int
     - nome: string
@@ -169,7 +168,6 @@ class Negociacao {
     + encerrarNegociacao(): void
 }
 
-' Relacionamentos
 Usuario <|-- Comprador
 Usuario <|-- Vendedor
 Usuario <|-- Administrador
