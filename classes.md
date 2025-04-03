@@ -21,7 +21,7 @@ class Usuario {
 -statusConta: String
 -endereco: Endereco
 
-+editarPerfil(nome: String, cpf: String, email: String, senha: String, telefone: String): void
++editarPerfil(nome: String, email: String, senha: String, telefone: String, endereco: Endereco): void
 +excluirPerfil(): void
 +fazerLogin(email: String, senha: String): boolean
 #verificarSenha(senha: String): boolean
@@ -42,6 +42,13 @@ class Comprador {
 }
 
 class Vendedor {
+-historicoVendas: List<Veiculo>
+-listaAnuncios: List<Anuncio>
+
++removerAnuncio(anuncioId: int): void
++criarAnuncio(veiculoId: int): void
++definirComoVendido(veiculoId: int): void
++negociarCondicoes(comprador: Comprador, veiculo: Veiculo): void
 
 }
 
@@ -79,6 +86,10 @@ class Caminhao {
 Veiculo <|-- Carro
 Veiculo <|-- Moto
 Veiculo <|-- Caminhao
+
+class Anuncio {
+
+}
 
 class Data {
 -dia: int
