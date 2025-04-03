@@ -12,14 +12,16 @@
 class Usuário {
 -id: int
 -nome: String
+-cpf: String
 -email: String
 -senha: String
 -telefone: String
 -tipo: String
 -dataCadastro: Data
 -statusConta: String
+-endereço: Endereço
 
-+editarPerfil(nome: String, email: String, senha: String, telefone: String): void
++editarPerfil(nome: String, cpf: String, email: String, senha: String, telefone: String): void
 +excluirPerfil(): void
 +fazerLogin(email: String, senha: String): boolean
 #verificarSenha(senha: String): boolean
@@ -46,10 +48,23 @@ Usuário <|-- Administrador
 
 class Data {
 -dia: int
--mes: int
+-mês: int
 -ano: int
 
-+exibirData(dia: int, mes: int, ano: int): void
++exibirData(dia: int, mês: int, ano: int): void
+}
+
+class Endereço {
+-logradouro: String
+-número: int
+-complemento: String
+-cep: String
+-bairro: String
+-cidade: String
+-estado: String
+-país: String
+
++exibirEndereço(logradouro: String, número: int, complemento: String, cep: String, bairro: String, cidade: String, estado: String, país: String)
 }
  
 @enduml
