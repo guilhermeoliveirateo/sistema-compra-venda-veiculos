@@ -24,6 +24,10 @@ class Usuário {
 #verificarSenha(senha: String): boolean
 
 }
+
+class Comprador extends Usuário {
+
+}
  
 @enduml
 ```
