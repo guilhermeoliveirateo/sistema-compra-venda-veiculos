@@ -46,6 +46,40 @@ Usuário <|-- Comprador
 Usuário <|-- Vendedor
 Usuário <|-- Administrador
 
+class Veículo {
+-id: int
+-tipo: String
+-marca: String
+-modelo: String
+-ano: int
+-preço: float
+-quilometragem: int
+-localização: Endereço
+-status: String
+-descrição: String
+
++editarPerfil(nome: String, cpf: String, email: String, senha: String, telefone: String): void
++excluirPerfil(): void
++fazerLogin(email: String, senha: String): boolean
+#verificarSenha(senha: String): boolean
++alterarSenha(senhaAtual: String, novaSenha: String): boolean
++recuperarConta(email: String): boolean
+
+}
+
+class Carro {
+}
+
+class Moto {
+}
+
+class Caminhão {
+}
+
+Veículo <|-- Carro
+Veículo <|-- Moto
+Veículo <|-- Caminhão
+
 class Data {
 -dia: int
 -mês: int
