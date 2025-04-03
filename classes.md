@@ -53,7 +53,14 @@ class Vendedor {
 }
 
 class Administrador {
+-adminId: int
 
++gerenciarAnuncios(listaAnuncios: List<Anuncio>): void
++gerenciarUsuarios(listaUsuarios: List<Usuario>): void
++suspenderConta(usuarioId: int): void
++reativarConta(usuarioId: int): void
++suspenderAnuncio(anuncioId: int): void
++reativarAnuncio(anuncioId: int): void
 }
 
 Usuario <|-- Comprador
