@@ -58,13 +58,6 @@ class Veículo {
 -status: String
 -descrição: String
 
-+editarPerfil(nome: String, cpf: String, email: String, senha: String, telefone: String): void
-+excluirPerfil(): void
-+fazerLogin(email: String, senha: String): boolean
-#verificarSenha(senha: String): boolean
-+alterarSenha(senhaAtual: String, novaSenha: String): boolean
-+recuperarConta(email: String): boolean
-
 }
 
 class Carro {
