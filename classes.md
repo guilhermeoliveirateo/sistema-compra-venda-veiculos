@@ -16,7 +16,7 @@ class Usuário {
 -senha: String
 -telefone: String
 -tipo: String
--dataCadastro: String
+-dataCadastro: Data
 -statusConta: String
 
 +editarPerfil(nome: String, email: String, senha: String, telefone: String): void
@@ -43,6 +43,12 @@ class Administrador {
 Usuário <|-- Comprador
 Usuário <|-- Vendedor
 Usuário <|-- Administrador
+
+class Data {
+-dia: int
+-mes: int
+-ano: int
+}
  
 @enduml
 ```
