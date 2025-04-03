@@ -48,6 +48,8 @@ class Data {
 -dia: int
 -mes: int
 -ano: int
+
++exibirData(dia: int, mes: int, ano: int): void
 }
  
 @enduml
