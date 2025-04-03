@@ -17,11 +17,14 @@ class Usuário {
 -telefone: String
 -tipo: String
 -dataCadastro: String
+-statusConta: String
 
 +editarPerfil(nome: String, email: String, senha: String, telefone: String): void
 +excluirPerfil(): void
 +fazerLogin(email: String, senha: String): boolean
 #verificarSenha(senha: String): boolean
++alterarSenha(senhaAtual: String, novaSenha: String): boolean
++recuperarConta(email: String): boolean
 
 }
 
