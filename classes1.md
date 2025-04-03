@@ -1,20 +1,22 @@
-'''
+``` plantuml
+
 @startuml
+
 class Usuario {
-    - id: int
-    - nome: string
-    - email: string
-    - senha: string
-    - telefone: string
-    - tipo: string
-    - dataCadastro: date
-    - statusConta: string
-    + editarPerfil(nome: string, email: string, telefone: string): void
-    + excluirPerfil(): void
-    + fazerLogin(email: string, senha: string): bool
-    # verificarSenha(senha: string): bool
-    + alterarSenha(senhaAtual: string, novaSenha: string): bool
-    + recuperarConta(email: string): bool
+-id: int
+-nome: string
+-email: string
+-senha: string
+-telefone: string
+-tipo: string
+-dataCadastro: date
+-statusConta: string
++editarPerfil(nome: string, email: string, telefone: string): void
++excluirPerfil(): void
++fazerLogin(email: string, senha: string): bool
+#verificarSenha(senha: string): bool
++alterarSenha(senhaAtual: string, novaSenha: string): bool
++recuperarConta(email: string): bool
 }
 
 class Comprador {
@@ -196,4 +198,4 @@ Pagamento --> Vendedor
 Mensagem --> Usuario
 
 @enduml
-'''
+```
