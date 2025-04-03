@@ -9,7 +9,7 @@
 ``` plantuml
 @startuml 
 
-class Usuário {
+class Usuario {
 -id: int
 -nome: String
 -cpf: String
@@ -19,7 +19,7 @@ class Usuário {
 -tipo: String
 -dataCadastro: Data
 -statusConta: String
--endereço: Endereço
+-endereco: Endereco
 
 +editarPerfil(nome: String, cpf: String, email: String, senha: String, telefone: String): void
 +excluirPerfil(): void
@@ -27,11 +27,18 @@ class Usuário {
 #verificarSenha(senha: String): boolean
 +alterarSenha(senhaAtual: String, novaSenha: String): boolean
 +recuperarConta(email: String): boolean
-
 }
 
 class Comprador {
+-historicoCompras: List<Veiculo>
+-veiculosAcompanhados: List<Veículo>
 
++buscarVeiculo(tipo: String, marca: String, modelo: String, ano: int, preco: float): List<Veículo>
++visualizarDetalhes(veiculoId: int): Veiculo
++consultarHistoricoCompras(): List<Veículo>
++negociarCondicoes(vendedor: Vendedor, veiculo: Veiculo): void
++adicionarFavorito(veiculoId: int): void
++removerFavorito(veiculoId: int): void
 }
 
 class Vendedor {
@@ -42,21 +49,21 @@ class Administrador {
 
 }
 
-Usuário <|-- Comprador
-Usuário <|-- Vendedor
-Usuário <|-- Administrador
+Usuario <|-- Comprador
+Usuario <|-- Vendedor
+Usuario <|-- Administrador
 
-class Veículo {
+class Veiculo {
 -id: int
 -tipo: String
 -marca: String
 -modelo: String
 -ano: int
--preço: float
+-preco: float
 -quilometragem: int
--localização: Endereço
+-localizacao: Endereço
 -status: String
--descrição: String
+-descricao: String
 
 }
 
@@ -66,32 +73,32 @@ class Carro {
 class Moto {
 }
 
-class Caminhão {
+class Caminhao {
 }
 
-Veículo <|-- Carro
-Veículo <|-- Moto
-Veículo <|-- Caminhão
+Veiculo <|-- Carro
+Veiculo <|-- Moto
+Veiculo <|-- Caminhao
 
 class Data {
 -dia: int
--mês: int
+-mes: int
 -ano: int
 
 +exibirData(): void
 }
 
-class Endereço {
+class Endereco {
 -logradouro: String
--número: int
+-numero: int
 -complemento: String
 -cep: String
 -bairro: String
 -cidade: String
 -estado: String
--país: String
+-pais: String
 
-+exibirEndereço(): void
++exibirEndereco(): void
 }
  
 @enduml
