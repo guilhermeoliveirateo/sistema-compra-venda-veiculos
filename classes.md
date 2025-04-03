@@ -25,9 +25,11 @@ class Usuário {
 
 }
 
-class Comprador extends Usuário {
+class Comprador {
 
 }
+
+Usuário <|-- Comprador
  
 @enduml
 ```
