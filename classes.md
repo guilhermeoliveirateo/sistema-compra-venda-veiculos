@@ -51,7 +51,7 @@ class Data {
 -mês: int
 -ano: int
 
-+exibirData(dia: int, mês: int, ano: int): void
++exibirData(): void
 }
 
 class Endereço {
@@ -64,7 +64,7 @@ class Endereço {
 -estado: String
 -país: String
 
-+exibirEndereço(logradouro: String, número: int, complemento: String, cep: String, bairro: String, cidade: String, estado: String, país: String)
++exibirEndereço(): void
 }
  
 @enduml
