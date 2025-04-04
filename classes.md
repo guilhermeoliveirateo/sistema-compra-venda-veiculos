@@ -78,6 +78,14 @@ class Veiculo {
 }
 
 class Carro {
+- qtdPortas: int
+- tipoCombustivel: string
+- cambio: string
+- capacidadePortaMalas: float
+- tetoSolar: bool
+- arCondicionado: bool
++ exibirInformacoesCarro(): string
++ calcularAutonomia(consumoMedio: float, capacidadeTanque: float): float
 }
 
 class Moto {
@@ -91,8 +99,63 @@ Veiculo <|-- Moto
 Veiculo <|-- Caminhao
 
 class Anuncio {
+    - id: int
+    - veiculo: Veiculo
+    - vendedor: Vendedor
+    - descricao: string
+    - preco: float
+    - dataCriacao: date
+    - status: string
+    + ativarAnuncio(): void
+    + desativarAnuncio(): void
+    + adicionarDescricao(descricao: string): void
+    + adicionarFotos(fotos: List<string>): void
 
 }
+
+class Pagamento {
+    - id: int
+    - comprador: Comprador
+    - vendedor: Vendedor
+    - valor: float
+    - dataPagamento: date
+    - status: string
+    + verificarPagamento(): bool
+    + confirmarPagamento(): void
+}
+
+class HistoricoTransacoes {
+    - id: int
+    - usuario: Usuario
+    - tipo: string
+    - veiculo: Veiculo
+    - data: date
+    - status: string
+    + registrarTransacao(usuario: Usuario, veiculo: Veiculo, tipo: string): void
+    + consultarHistorico(usuario: Usuario): List<HistoricoTransacoes>
+}
+
+class Mensagem {
+    - id: int
+    - remetente: Usuario
+    - destinatario: Usuario
+    - conteudo: string
+    - dataEnvio: datetime
+    + enviarMensagem(): void
+    + receberMensagem(): string
+}
+
+class Negociacao {
+    - id: int
+    - comprador: Comprador
+    - vendedor: Vendedor
+    - veiculo: Veiculo
+    - status: string
+    - mensagens: List<Mensagem>
+    + iniciarNegociacao(): void
+    + encerrarNegociacao(): void
+}
+
 
 class Data {
 -dia: int
@@ -114,6 +177,25 @@ class Endereco {
 
 +exibirEndereco(): void
 }
+
+Comprador --> "0..*" HistoricoTransacoes
+Vendedor --> "0..*" Anuncio
+Vendedor --> "0..*" HistoricoTransacoes
+Comprador --> "0..*" Mensagem
+Vendedor --> "0..*" Mensagem
+Comprador --> "0..*" Pagamento
+Vendedor --> "0..*" Pagamento
+Anuncio --> Veiculo
+Anuncio --> Vendedor
+Negociacao --> Comprador
+Negociacao --> Vendedor
+Negociacao --> Veiculo
+Negociacao --> "0..*" Mensagem
+HistoricoTransacoes --> Veiculo
+HistoricoTransacoes --> Usuario
+Pagamento --> Comprador
+Pagamento --> Vendedor
+Mensagem --> Usuario
  
 @enduml
 ```
