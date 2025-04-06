@@ -112,64 +112,59 @@ Veiculo <|-- Carro
 Veiculo <|-- Moto
 Veiculo <|-- Caminhao
 
-class Anuncio {
+class Anuncio{
 -id: int
 -veiculo: Veiculo
 -vendedor: Vendedor
--descricao: string
+-descricao: String
 -preco: float
--dataCriacao: date
--status: string
-+ativarAnuncio(): void
-+desativarAnuncio(): void
-+adicionarDescricao(descricao: string): void
-+adicionarFotos(fotos: List<string>): void
+-dataCriacao: Data
+-status: String
 
++ativarAnuncio(anuncioId: int): void
++desativarAnuncio(anuncioId: int): void
 }
 
-class Pagamento {
-    - id: int
-    - comprador: Comprador
-    - vendedor: Vendedor
-    - valor: float
-    - dataPagamento: date
-    - status: string
-    + verificarPagamento(): bool
-    + confirmarPagamento(): void
+class Pagamento{
+-id: int
+-comprador: Comprador
+-vendedor: Vendedor
+-valor: float
+-dataPagamento: Data
+-status: String
+
++verificarPagamento(pagamentoId: int): bool
++confirmarPagamento(): void
 }
 
-class HistoricoTransacoes {
-    - id: int
-    - usuario: Usuario
-    - tipo: string
-    - veiculo: Veiculo
-    - data: date
-    - status: string
-    + registrarTransacao(usuario: Usuario, veiculo: Veiculo, tipo: string): void
-    + consultarHistorico(usuario: Usuario): List<HistoricoTransacoes>
+class HistoricoTransacoes{
+-id: int
+-usuario: Usuario
+-tipo: String
+
++consultarHistorico(usuario: Usuario, tipo: String): List<HistoricoTransacoes>
 }
 
-class Mensagem {
-    - id: int
-    - remetente: Usuario
-    - destinatario: Usuario
-    - conteudo: string
-    - dataEnvio: datetime
-    + enviarMensagem(): void
-    + receberMensagem(): string
+class Mensagem{
+-id: int
+-remetente: Usuario
+-destinatario: Usuario
+-conteudo: String
+-dataEnvio: Data
+
++enviarMensagem(destinatario: Usuario, conteudo: String): void
 }
 
-class Negociacao {
-    - id: int
-    - comprador: Comprador
-    - vendedor: Vendedor
-    - veiculo: Veiculo
-    - status: string
-    - mensagens: List<Mensagem>
-    + iniciarNegociacao(): void
-    + encerrarNegociacao(): void
-}
+class Negociacao{
+-id: int
+-comprador: Comprador
+-vendedor: Vendedor
+-anuncio: Anuncio
+-status: String
 
++iniciarNegociacao(comprador: Comprador, vendedor: Vendedor, anuncio: Anuncio): void
++encerrarNegociacao(negociacaoId: int): void
+}
 
 class Data{
 -dia: int
