@@ -53,7 +53,7 @@ class Vendedor{
 +consultarHistoricoVendas(): List<Anuncio>
 }
 
-class Administrador {
+class Administrador{
 -numeroFuncionario: int
 
 +gerenciarAnuncios(listaAnuncios: List<Anuncio>): void
