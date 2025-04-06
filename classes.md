@@ -77,7 +77,9 @@ class Veiculo{
 -localizacao: Endereço
 -status: String
 
-+exibirInformacoesVeiculo(): void
++criarCarro(portas: int, combustivel: String, cambio: String, portaMalas: float, tetoSolar: boolean, ac: boolean): Carro
++criarMoto(): Moto
++criarCaminhao(): Caminhao
 }
 
 class Carro{
@@ -136,7 +138,7 @@ class Pagamento{
 -dataPagamento: Data
 -status: String
 
-+verificarPagamento(pagamentoId: int): bool
++verificarPagamento(pagamentoId: int): boolean
 +confirmarPagamento(): void
 }
 
