@@ -64,35 +64,48 @@ Usuario <|-- Comprador
 Usuario <|-- Vendedor
 Usuario <|-- Administrador
 
-class Veiculo {
+class Veiculo{
 -id: int
 -tipo: String
 -marca: String
 -modelo: String
 -ano: int
--preco: float
 -quilometragem: int
 -localizacao: Endereço
 -status: String
--descricao: String
 
++exibirInformacoesVeiculo(): void
 }
 
-class Carro {
-- qtdPortas: int
-- tipoCombustivel: string
-- cambio: string
-- capacidadePortaMalas: float
-- tetoSolar: bool
-- arCondicionado: bool
-+ exibirInformacoesCarro(): string
-+ calcularAutonomia(consumoMedio: float, capacidadeTanque: float): float
+class Carro{
+-qtdPortas: int
+-tipoCombustivel: String
+-cambio: String
+-capacidadePortaMalas: float
+-tetoSolar: boolean
+-arCondicionado: boolean
+
++exibirInformacoesCarro(): void
 }
 
-class Moto {
+class Moto{
+-cilindradas: int
+-tipoFreio: String
+-tipoMoto: String
+-partidaEletrica: boolean
+-abs: boolean
+
++exibirInformacoesMoto(): void
 }
 
-class Caminhao {
+class Caminhao{
+-capacidadeCarga: float
+-eixos: int
+-tipoCarroceria: String
+-freiosAr: boolean
+-cabineLeito: boolean
+
++exibirInformacoesCaminhao(): void
 }
 
 Veiculo <|-- Carro
@@ -158,7 +171,7 @@ class Negociacao {
 }
 
 
-class Data {
+class Data{
 -dia: int
 -mes: int
 -ano: int
@@ -166,7 +179,7 @@ class Data {
 +exibirData(): void
 }
 
-class Endereco {
+class Endereco{
 -logradouro: String
 -numero: int
 -complemento: String
