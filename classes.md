@@ -51,6 +51,9 @@ class Vendedor{
 +definirComoVendido(anuncioId: int): void
 +negociarCondicoes(comprador: Comprador, anuncio: Anuncio): void
 +consultarHistoricoVendas(): List<Anuncio>
++criarVeiculo(tipo: String, marca: String, modelo: String, ano: int, km: int): Veiculo
++editarVeiculo(veiculoId: int, tipo: String, marca: String, modelo: String, ano: int, km: int): void
++removerVeiculo(veiculoId: int): void
 }
 
 class Administrador{
