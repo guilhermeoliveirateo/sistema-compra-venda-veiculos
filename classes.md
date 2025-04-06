@@ -77,7 +77,7 @@ class Veiculo{
 -localizacao: Endereço
 -status: String
 
-+criarCarro(portas: int, combustivel: String, cambio: String, portaMalas: float, tetoSolar: boolean, ac: boolean): Carro
++criarCarro(por: int, comb: String, camb: String, pm: float, ts: boolean, ac: boolean): Carro
 +criarMoto(): Moto
 +criarCaminhao(): Caminhao
 }
