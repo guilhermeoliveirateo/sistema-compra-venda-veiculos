@@ -113,17 +113,17 @@ Veiculo <|-- Moto
 Veiculo <|-- Caminhao
 
 class Anuncio {
-    - id: int
-    - veiculo: Veiculo
-    - vendedor: Vendedor
-    - descricao: string
-    - preco: float
-    - dataCriacao: date
-    - status: string
-    + ativarAnuncio(): void
-    + desativarAnuncio(): void
-    + adicionarDescricao(descricao: string): void
-    + adicionarFotos(fotos: List<string>): void
+-id: int
+-veiculo: Veiculo
+-vendedor: Vendedor
+-descricao: string
+-preco: float
+-dataCriacao: date
+-status: string
++ativarAnuncio(): void
++desativarAnuncio(): void
++adicionarDescricao(descricao: string): void
++adicionarFotos(fotos: List<string>): void
 
 }
 
