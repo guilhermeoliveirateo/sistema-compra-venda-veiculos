@@ -9,7 +9,7 @@
 ``` plantuml
 @startuml 
 
-class Usuario {
+class Usuario{
 -id: int
 -nome: String
 -cpf: String
@@ -29,27 +29,28 @@ class Usuario {
 +recuperarConta(email: String): boolean
 }
 
-class Comprador {
--historicoCompras: List<Veiculo>
--veiculosAcompanhados: List<Veículo>
+class Comprador{
+-historicoCompras: List<Anuncio>
+-veiculosAcompanhados: List<Anuncio>
 
-+buscarVeiculo(tipo: String, marca: String, modelo: String, ano: int, preco: float): List<Veículo>
-+visualizarDetalhes(veiculoId: int): Veiculo
-+consultarHistoricoCompras(): List<Veículo>
-+negociarCondicoes(vendedor: Vendedor, veiculo: Veiculo): void
-+adicionarFavorito(veiculoId: int): void
-+removerFavorito(veiculoId: int): void
++buscarVeiculo(descricao: String, preco: float): List<Anuncio>
++visualizarDetalhes(anuncioId: int): Anuncio
++consultarHistoricoCompras(): List<Anuncio>
++negociarCondicoes(vendedor: Vendedor, anuncio: Anuncio): void
++adicionarFavorito(anuncioId: int): void
++removerFavorito(anuncioId: int): void
 }
 
-class Vendedor {
--historicoVendas: List<Veiculo>
+class Vendedor{
+-historicoVendas: List<Anuncio>
 -listaAnuncios: List<Anuncio>
 
 +removerAnuncio(anuncioId: int): void
-+criarAnuncio(veiculoId: int): void
-+definirComoVendido(veiculoId: int): void
-+negociarCondicoes(comprador: Comprador, veiculo: Veiculo): void
-
++criarAnuncio(veiculo: Veiculo, descricao: String, preco: float): Anuncio
++editarAnuncio(anuncioId: int, novaDescricao: String, novoPreco: float): void
++definirComoVendido(anuncioId: int): void
++negociarCondicoes(comprador: Comprador, anuncio: Anuncio): void
++consultarHistoricoVendas(): List<Anuncio>
 }
 
 class Administrador {
