@@ -77,9 +77,12 @@ class Veiculo{
 -localizacao: Endereço
 -status: String
 
-+criarCarro(por: int, comb: String, camb: String, pm: float, ts: boolean, ac: boolean): Carro
-+criarMoto(): Moto
-+criarCaminhao(): Caminhao
++criarCarro(portas: int, combustivel: String, cambio: String, portaMalas: float, tetoSolar: boolean, ac: boolean): Carro
++editarCarro(carroId: int, portas: int, combustivel: String, cambio: String, portaMalas: float, tetoSolar: boolean, ac: boolean): void
++criarMoto(cilindradas: int, freio: String, tipoMoto: String, partidaEletrica: boolean, abs: boolean): Moto
++editarMoto(motoId: int, cilindradas: int, freio: String, tipoMoto: String, partidaEletrica: boolean, abs: boolean): void
++criarCaminhao(carga: float, eixos: int, carroceria: String, freiosAr: boolean, leito: boolean): Caminhao
++editarCaminhao(caminhaoId: int, carga: float, eixos: int, carroceria: String, freiosAr: boolean, leito: boolean): void
 }
 
 class Carro{
