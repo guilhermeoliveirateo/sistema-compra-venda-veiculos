@@ -189,24 +189,24 @@ class Endereco{
 }
 
 Comprador "0..*" -- "0..*" HistoricoTransacoes
-Vendedor "0..*" --> "0..*" Anuncio
-Vendedor "0..*" --> "0..*" HistoricoTransacoes
-Comprador "0..*" --> "0..*" Mensagem
-Vendedor "0..*" --> "0..*" Mensagem
-Comprador "0..*" --> "0..*" Pagamento
-Vendedor "0..*" --> "0..*" Pagamento
-Anuncio "1" --> "1" Veiculo
-Anuncio "1" --> "1" Vendedor
-Negociacao "1" --> "1" Comprador
-Negociacao "1" --> "1" Vendedor
-Negociacao "1" --> "1" Veiculo
-Negociacao "0..*" --> "0..*" Mensagem
-HistoricoTransacoes "1" --> "1" Veiculo
-HistoricoTransacoes "1" --> "1" Usuario
-Pagamento "1" --> "1" Comprador
-Pagamento "1" --> "1" Vendedor
-Mensagem "1" --> "1" Usuario
-Mensagem "1" --> "1" Usuario
+Vendedor "0..*" -- "0..*" Anuncio
+Vendedor "0..*" -- "0..*" HistoricoTransacoes
+Comprador "0..*" -- "0..*" Mensagem
+Vendedor "0..*" -- "0..*" Mensagem
+Comprador "0..*" -- "0..*" Pagamento
+Vendedor "0..*" -- "0..*" Pagamento
+Anuncio "1" -- "1" Veiculo
+Anuncio "1" -- "1" Vendedor
+Negociacao "1" -- "1" Comprador
+Negociacao "1" -- "1" Vendedor
+Negociacao "1" -- "1" Veiculo
+Negociacao "0..*" -- "0..*" Mensagem
+HistoricoTransacoes "1" -- "1" Veiculo
+HistoricoTransacoes "1" -- "1" Usuario
+Pagamento "1" -- "1" Comprador
+Pagamento "1" -- "1" Vendedor
+Mensagem "1" -- "1" Usuario
+Mensagem "1" -- "1" Usuario
  
 @enduml
 ```
