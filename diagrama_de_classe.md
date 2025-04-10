@@ -10,7 +10,6 @@
 @startuml 
 
 class Usuario{
--id: int
 -nome: String
 -cpf: String
 -email: String
@@ -22,7 +21,7 @@ class Usuario{
 -endereco: Endereco
 
 +editarPerfil(nome: String, email: String, senha: String, telefone: String, endereco: Endereco): void
-+excluirPerfil(): void
++excluirPerfil(usuario: Usuario): void
 +fazerLogin(email: String, senha: String): boolean
 #verificarSenha(senha: String): boolean
 +alterarSenha(senhaAtual: String, novaSenha: String): boolean
@@ -34,26 +33,26 @@ class Comprador{
 -veiculosAcompanhados: List<Anuncio>
 
 +buscarVeiculo(descricao: String, preco: float): List<Anuncio>
-+visualizarDetalhes(anuncioId: int): Anuncio
++visualizarDetalhes(anuncio: Anuncio): Anuncio
 +consultarHistoricoCompras(): List<Anuncio>
 +negociarCondicoes(vendedor: Vendedor, anuncio: Anuncio): void
-+adicionarFavorito(anuncioId: int): void
-+removerFavorito(anuncioId: int): void
++adicionarFavorito(anuncio: Anuncio): void
++removerFavorito(anuncio: Anuncio): void
 }
 
 class Vendedor{
 -historicoVendas: List<Anuncio>
 -listaAnuncios: List<Anuncio>
 
-+removerAnuncio(anuncioId: int): void
++removerAnuncio(anuncio: Anuncio): void
 +criarAnuncio(veiculo: Veiculo, descricao: String, preco: float): Anuncio
-+editarAnuncio(anuncioId: int, novaDescricao: String, novoPreco: float): void
-+definirComoVendido(anuncioId: int): void
++editarAnuncio(novaDescricao: String, novoPreco: float): void
++definirComoVendido(anuncio: Anuncio): void
 +negociarCondicoes(comprador: Comprador, anuncio: Anuncio): void
 +consultarHistoricoVendas(): List<Anuncio>
 +criarVeiculo(tipo: String, marca: String, modelo: String, ano: int, km: int): Veiculo
-+editarVeiculo(veiculoId: int, tipo: String, marca: String, modelo: String, ano: int, km: int): void
-+removerVeiculo(veiculoId: int): void
++editarVeiculo(tipo: String, marca: String, modelo: String, ano: int, km: int): void
++removerVeiculo(veiculo: Veiculo): void
 }
 
 class Administrador{
@@ -68,7 +67,6 @@ Usuario <|-- Vendedor
 Usuario <|-- Administrador
 
 class Veiculo{
--id: int
 -tipo: String
 -marca: String
 -modelo: String
@@ -78,11 +76,11 @@ class Veiculo{
 -status: String
 
 +criarCarro(portas: int, combustivel: String, cambio: String, portaMalas: float, tetoSolar: boolean, ac: boolean): Carro
-+editarCarro(carroId: int, portas: int, combustivel: String, cambio: String, portaMalas: float, tetoSolar: boolean, ac: boolean): void
++editarCarro(portas: int, combustivel: String, cambio: String, portaMalas: float, tetoSolar: boolean, ac: boolean): void
 +criarMoto(cilindradas: int, freio: String, tipoMoto: String, partidaEletrica: boolean, abs: boolean): Moto
-+editarMoto(motoId: int, cilindradas: int, freio: String, tipoMoto: String, partidaEletrica: boolean, abs: boolean): void
++editarMoto(cilindradas: int, freio: String, tipoMoto: String, partidaEletrica: boolean, abs: boolean): void
 +criarCaminhao(carga: float, eixos: int, carroceria: String, freiosAr: boolean, leito: boolean): Caminhao
-+editarCaminhao(caminhaoId: int, carga: float, eixos: int, carroceria: String, freiosAr: boolean, leito: boolean): void
++editarCaminhao(carga: float, eixos: int, carroceria: String, freiosAr: boolean, leito: boolean): void
 }
 
 class Carro{
@@ -121,7 +119,6 @@ Veiculo <|-- Moto
 Veiculo <|-- Caminhao
 
 class Anuncio{
--id: int
 -veiculo: Veiculo
 -vendedor: Vendedor
 -descricao: String
@@ -129,24 +126,22 @@ class Anuncio{
 -dataCriacao: Data
 -status: String
 
-+ativarAnuncio(anuncioId: int): void
-+desativarAnuncio(anuncioId: int): void
++ativarAnuncio(anuncio: Anuncio): void
++desativarAnuncio(anuncio: Anuncio): void
 }
 
 class Pagamento{
--id: int
 -comprador: Comprador
 -vendedor: Vendedor
 -valor: float
 -dataPagamento: Data
 -status: String
 
-+verificarPagamento(pagamentoId: int): boolean
++verificarPagamento(pagamento: Pagamento): boolean
 +confirmarPagamento(): void
 }
 
 class HistoricoTransacoes{
--id: int
 -usuario: Usuario
 -tipo: String
 
@@ -154,7 +149,6 @@ class HistoricoTransacoes{
 }
 
 class Mensagem{
--id: int
 -remetente: Usuario
 -destinatario: Usuario
 -conteudo: String
@@ -164,14 +158,13 @@ class Mensagem{
 }
 
 class Negociacao{
--id: int
 -comprador: Comprador
 -vendedor: Vendedor
 -anuncio: Anuncio
 -status: String
 
 +iniciarNegociacao(comprador: Comprador, vendedor: Vendedor, anuncio: Anuncio): void
-+encerrarNegociacao(negociacaoId: int): void
++encerrarNegociacao(negociacao: Negociacao): void
 }
 
 class Data{
@@ -195,7 +188,7 @@ class Endereco{
 +exibirEndereco(): void
 }
 
-Comprador "0..*" --> "0..*" HistoricoTransacoes
+Comprador "0..*" -- "0..*" HistoricoTransacoes
 Vendedor "0..*" --> "0..*" Anuncio
 Vendedor "0..*" --> "0..*" HistoricoTransacoes
 Comprador "0..*" --> "0..*" Mensagem
