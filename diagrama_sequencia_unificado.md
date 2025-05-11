@@ -132,7 +132,7 @@ Sistema --> Comprador : 52. negociação iniciada
 deactivate Negociacao
 deactivate Sistema
 
-Comprador -> Sistema : 53. enviarMensagem(texto)
+Comprador -> Sistema : 53. enviarMensagem()
 activate Sistema
 Sistema -> Mensagem : 54. salvarMensagem()
 activate Mensagem
