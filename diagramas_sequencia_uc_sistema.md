@@ -31,14 +31,14 @@ deactivate Sistema
 
 Comprador -> Sistema : 5. fazerLogin(email, senha)
 activate Sistema
-Sistema -> Usuario : 6. verificarSenha()
+Sistema -> Usuario : 6. verificarSenha(senha)
 activate Usuario
 Usuario --> Sistema : 7. senhaValida
 deactivate Usuario
 Sistema --> Comprador : 8. loginRealizado
 deactivate Sistema
 
-Comprador -> Sistema : 9. editarPerfil()
+Comprador -> Sistema : 9. editarPerfil(nome, email, senha, telefone, endereco)
 activate Sistema
 Sistema -> Usuario : 10. editarDados
 activate Usuario
@@ -58,14 +58,14 @@ deactivate Sistema
 
 Vendedor -> Sistema : 17. criarAnuncio()
 activate Sistema
-Sistema -> Veiculo : 18. adicionarVeiculo()
+Sistema -> Veiculo : 18. criarVeiculo(tipo, marca, modelo, ano, km)
 activate Veiculo
 Veiculo --> Sistema : 19. veiculoCriado
 deactivate Veiculo
-Sistema -> Anuncio : 20. adicionarDescricao()
-Sistema -> Anuncio : 21. adicionarPreco()
-Sistema -> Anuncio : 22. adicionarFotos()
-Sistema -> Anuncio : 23. adicionarLocalizacao()
+Sistema -> Anuncio : 20. adicionarDescricao(descricao)
+Sistema -> Anuncio : 21. adicionarPreco(preco)
+Sistema -> Anuncio : 22. adicionarFotos(fotos)
+Sistema -> Anuncio : 23. adicionarLocalizacao(localizacao)
 activate Anuncio
 Anuncio --> Sistema : 24. anuncioCriado
 deactivate Anuncio
