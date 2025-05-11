@@ -25,19 +25,19 @@ Comprador -> Sistema : 1. iniciarNegociacao(vendedor, anuncio)
 activate Sistema
 Sistema -> Negociacao : 2. criarNegociacao()
 activate Negociacao
-Negociacao --> Sistema : 3. negociação criada
-Sistema --> Comprador : 4. negociação iniciada
+Negociacao --> Sistema : 3. negociacaoCriada
+Sistema --> Comprador : 4. negociacaoIniciada
 
-Comprador -> Sistema : 5. enviarMensagem(texto)
+Comprador -> Sistema : 5. enviarMensagem()
 activate Mensagem
 Sistema -> Mensagem : 6. salvarMensagem()
 Mensagem --> Sistema : 7. confirmacaoMensagem
-Sistema --> Comprador : 8. mensagem enviada
+Sistema --> Comprador : 8. mensagemEnviada
 
 Vendedor -> Sistema : 9. responderMensagem()
 Sistema -> Mensagem : 10. salvarResposta()
-Mensagem --> Sistema : 11. resposta salva
-Sistema --> Vendedor : 12. resposta enviada
+Mensagem --> Sistema : 11. respostaSalva
+Sistema --> Vendedor : 12. respostaEnviada
 
 Vendedor -> Sistema : 13. definirComoVendido(veiculo)
 activate Sistema
