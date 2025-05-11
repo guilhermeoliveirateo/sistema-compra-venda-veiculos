@@ -14,7 +14,6 @@ participant Negociacao
 participant Mensagem
 participant HistoricoTransacoes
 
-== Login e Cadastro ==
 Comprador -> Sistema : 1. criarPerfil()
 activate Sistema
 Sistema -> Usuario : 2. salvar novo usuário
@@ -33,7 +32,6 @@ deactivate Usuario
 Sistema --> Comprador : 8. login realizado
 deactivate Sistema
 
-== Edição e Exclusão de Perfil ==
 Comprador -> Sistema : 9. editarPerfil()
 activate Sistema
 Sistema -> Usuario : 10. editar dados
@@ -52,7 +50,6 @@ deactivate Usuario
 Sistema --> Comprador : 16. perfil excluído
 deactivate Sistema
 
-== Criar, Editar e Remover Anúncio ==
 Vendedor -> Sistema : 17. criarAnuncio()
 activate Sistema
 Sistema -> Veiculo : 18. adicionarVeiculo()
@@ -84,7 +81,6 @@ deactivate Anuncio
 Sistema --> Vendedor : 30. anúncio removido
 deactivate Sistema
 
-== Buscar, Visualizar e Acompanhar Veículos ==
 Comprador -> Sistema : 31. buscarVeiculo()
 activate Sistema
 Sistema -> Anuncio : 32. filtrar por descrição/preço
@@ -112,7 +108,6 @@ deactivate Anuncio
 Sistema --> Comprador : 42. status exibido
 deactivate Sistema
 
-== Negociação e Pagamento ==
 Comprador -> Sistema : 43. iniciarNegociacao(vendedor, anuncio)
 activate Sistema
 Sistema -> Negociacao : 44. iniciar negociação
@@ -140,7 +135,6 @@ deactivate Pagamento
 Sistema --> Comprador : 54. pagamento confirmado
 deactivate Sistema
 
-== Histórico ==
 Comprador -> Sistema : 55. consultarHistoricoCompras()
 activate Sistema
 Sistema -> HistoricoTransacoes : 56. buscar compras
