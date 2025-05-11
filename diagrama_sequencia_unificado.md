@@ -41,7 +41,7 @@ Sistema --> Comprador : 8. loginRealizado
 deactivate Usuario
 deactivate Sistema
 
-Comprador -> Sistema : 9. editarPerfil(...)
+Comprador -> Sistema : 9. editarPerfil(nome, email, senha, telefone, endereco)
 activate Sistema
 Sistema -> Usuario : 10. editarDados
 activate Usuario
@@ -54,7 +54,7 @@ Comprador -> Sistema : 13. excluirPerfil()
 activate Sistema
 Sistema -> Usuario : 14. excluirUsuario
 activate Usuario
-Usuario --> Sistema : 15. confirmaçãoExclusao
+Usuario --> Sistema : 15. confirmacaoExclusao
 Sistema --> Comprador : 16. perfilExcluido
 deactivate Usuario
 deactivate Sistema
@@ -127,8 +127,8 @@ Comprador -> Sistema : 49. iniciarNegociacao(vendedor, anuncio)
 activate Sistema
 Sistema -> Negociacao : 50. criarNegociacao()
 activate Negociacao
-Negociacao --> Sistema : 51. negociação criada
-Sistema --> Comprador : 52. negociação iniciada
+Negociacao --> Sistema : 51. negociacaoCriada
+Sistema --> Comprador : 52. negociacaoIniciada
 deactivate Negociacao
 deactivate Sistema
 
@@ -145,8 +145,8 @@ Vendedor -> Sistema : 57. responderMensagem()
 activate Sistema
 Sistema -> Mensagem : 58. salvarResposta()
 activate Mensagem
-Mensagem --> Sistema : 59. resposta salva
-Sistema --> Vendedor : 60. resposta enviada
+Mensagem --> Sistema : 59. respostaSalva
+Sistema --> Vendedor : 60. respostaEnviada
 deactivate Mensagem
 deactivate Sistema
 
@@ -163,15 +163,15 @@ Vendedor -> Sistema : 65. definirComoVendido(veiculo)
 activate Sistema
 Sistema -> Pagamento : 66. verificarPagamento()
 activate Pagamento
-Pagamento --> Sistema : 67. pagamento confirmado
+Pagamento --> Sistema : 67. pagamentoConfirmado
 
 Sistema -> Sistema : 68. notificarConfirmacao()
-Sistema --> Vendedor : 69. confirmação enviada
+Sistema --> Vendedor : 69. confirmacaoEnviada
 
 Sistema -> Veiculo : 70. alterarStatus(vendido)
 activate Veiculo
-Veiculo --> Sistema : 71. status alterado
-Sistema --> Vendedor : 72. veículo marcado como vendido
+Veiculo --> Sistema : 71. statusAlterado
+Sistema --> Vendedor : 72. veiculoMarcadoVendido
 deactivate Pagamento
 deactivate Veiculo
 deactivate Sistema
@@ -181,7 +181,7 @@ activate Sistema
 Sistema -> HistoricoTransacoes : 74. buscarCompras
 activate HistoricoTransacoes
 HistoricoTransacoes --> Sistema : 75. listaTransacoes
-Sistema --> Comprador : 76. histórico de compras
+Sistema --> Comprador : 76. historicoCompras
 deactivate HistoricoTransacoes
 deactivate Sistema
 
@@ -190,28 +190,28 @@ activate Sistema
 Sistema -> HistoricoTransacoes : 78. buscarVendas
 activate HistoricoTransacoes
 HistoricoTransacoes --> Sistema : 79. listaTransacoes
-Sistema --> Vendedor : 80. histórico de vendas
+Sistema --> Vendedor : 80. historicoVendas
 deactivate HistoricoTransacoes
 deactivate Sistema
 
 Sistema -> Sistema : 81. visualizarDetalhesVenda()
-Sistema --> Vendedor : 82. detalhes da venda
+Sistema --> Vendedor : 82. detalhesVenda
 
 Sistema -> Sistema : 83. visualizarDetalhesCompra()
-Sistema --> Comprador : 84. detalhes da compra
+Sistema --> Comprador : 84. detalhesCompra
 
 Admin -> Sistema : 85. gerenciarUsuarios()
 activate Usuario
 Sistema -> Usuario : 86. listar/editar/excluir
-Usuario --> Sistema : 87. operação concluída
-Sistema --> Admin : 88. gestão de usuários concluída
+Usuario --> Sistema : 87. operacaoConcluida
+Sistema --> Admin : 88. gestaoUsuariosConcluida
 deactivate Usuario
 
 Admin -> Sistema : 89. gerenciarAnuncios()
 activate Anuncio
 Sistema -> Anuncio : 90. listar/editar/remover
-Anuncio --> Sistema : 91. operação concluída
-Sistema --> Admin : 92. gestão de anúncios concluída
+Anuncio --> Sistema : 91. operacaoConcluida
+Sistema --> Admin : 92. gestaoAnunciosConcluida
 deactivate Anuncio
 
 deactivate Sistema
