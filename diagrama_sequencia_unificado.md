@@ -194,10 +194,10 @@ Sistema --> Vendedor : 80. histórico de vendas
 deactivate HistoricoTransacoes
 deactivate Sistema
 
-Sistema -> Sistema : 81. visualizarDetalhesVenda(id)
+Sistema -> Sistema : 81. visualizarDetalhesVenda()
 Sistema --> Vendedor : 82. detalhes da venda
 
-Sistema -> Sistema : 83. visualizarDetalhesCompra(id)
+Sistema -> Sistema : 83. visualizarDetalhesCompra()
 Sistema --> Comprador : 84. detalhes da compra
 
 Admin -> Sistema : 85. gerenciarUsuarios()
