@@ -1,4 +1,4 @@
-# Diagrama de Sequência Integrado - Sistema de Compra e Venda de Veículos
+# Diagrama de Sequência Unificado - Todos os Casos de Uso
 
 ```plantuml
 @startuml
@@ -12,106 +12,151 @@ participant Veiculo
 participant Pagamento
 participant Negociacao
 participant Mensagem
+participant HistoricoTransacoes
 
-== Fluxo completo de interação entre casos de uso ==
-
-' Login
-Comprador -> Sistema : 1. fazerLogin(email, senha)
+== Login e Cadastro ==
+Comprador -> Sistema : 1. criarPerfil()
 activate Sistema
-Sistema -> Usuario : 2. verificarSenha()
-Usuario --> Sistema : 3. true
-Sistema --> Comprador : 4. login realizado
+Sistema -> Usuario : 2. salvar novo usuário
+activate Usuario
+Usuario --> Sistema : 3. confirmação
+deactivate Usuario
+Sistema --> Comprador : 4. perfil criado
 deactivate Sistema
 
-' Editar perfil
-Comprador -> Sistema : 5. editarPerfil()
+Comprador -> Sistema : 5. fazerLogin(email, senha)
 activate Sistema
-Sistema -> Usuario : 6. editarPerfil()
-Usuario --> Sistema : 7. ok
-Sistema --> Comprador : 8. perfil atualizado
+Sistema -> Usuario : 6. verificarSenha()
+activate Usuario
+Usuario --> Sistema : 7. senha válida
+deactivate Usuario
+Sistema --> Comprador : 8. login realizado
 deactivate Sistema
 
-' Criar anúncio
-Vendedor -> Sistema : 9. criarAnuncio(veiculo, descricao, preco)
+== Edição e Exclusão de Perfil ==
+Comprador -> Sistema : 9. editarPerfil()
 activate Sistema
-Sistema -> Veiculo : 10. criarVeiculo()
-Veiculo --> Sistema : 11. veiculo criado
-Sistema -> Anuncio : 12. criarAnuncio()
-Anuncio --> Sistema : 13. anuncio criado
-Sistema --> Vendedor : 14. anúncio criado
+Sistema -> Usuario : 10. editar dados
+activate Usuario
+Usuario --> Sistema : 11. dados atualizados
+deactivate Usuario
+Sistema --> Comprador : 12. perfil atualizado
 deactivate Sistema
 
-' Editar anúncio
-Vendedor -> Sistema : 15. editarAnuncio(anuncioId)
+Comprador -> Sistema : 13. excluirPerfil()
 activate Sistema
-Sistema -> Anuncio : 16. alterarDescricao()
-Sistema -> Anuncio : 17. alterarPreco()
-Anuncio --> Sistema : 18. anuncio atualizado
-Sistema --> Vendedor : 19. anúncio editado
+Sistema -> Usuario : 14. excluirPerfil()
+activate Usuario
+Usuario --> Sistema : 15. confirmação de exclusão
+deactivate Usuario
+Sistema --> Comprador : 16. perfil excluído
 deactivate Sistema
 
-' Remover anúncio
-Vendedor -> Sistema : 20. removerAnuncio(anuncioId)
+== Criar, Editar e Remover Anúncio ==
+Vendedor -> Sistema : 17. criarAnuncio()
 activate Sistema
-Sistema -> Anuncio : 21. desativarAnuncio()
-Anuncio --> Sistema : 22. status = removido
-Sistema --> Vendedor : 23. anúncio removido
+Sistema -> Veiculo : 18. adicionarVeiculo()
+activate Veiculo
+Veiculo --> Sistema : 19. veiculo criado
+deactivate Veiculo
+Sistema -> Anuncio : 20. adicionar descrição, preço, fotos, localização
+activate Anuncio
+Anuncio --> Sistema : 21. anúncio criado
+deactivate Anuncio
+Sistema --> Vendedor : 22. anúncio publicado
 deactivate Sistema
 
-' Buscar veículo
-Comprador -> Sistema : 24. buscarVeiculo(descricao, preco)
+Vendedor -> Sistema : 23. editarAnuncio()
 activate Sistema
-Sistema -> Anuncio : 25. filtrar anúncios
-Anuncio --> Sistema : 26. lista de anúncios
-Sistema --> Comprador : 27. exibir anúncios
+Sistema -> Anuncio : 24. alterar descrição, preço, fotos, localização
+activate Anuncio
+Anuncio --> Sistema : 25. anúncio atualizado
+deactivate Anuncio
+Sistema --> Vendedor : 26. edição concluída
 deactivate Sistema
 
-' Visualizar detalhes
-Comprador -> Sistema : 28. visualizarDetalhes(anuncioId)
+Vendedor -> Sistema : 27. removerAnuncio()
 activate Sistema
-Sistema -> Anuncio : 29. obterDetalhes()
-Anuncio --> Sistema : 30. detalhes
-Sistema --> Comprador : 31. mostrar detalhes
+Sistema -> Anuncio : 28. adicionar motivo da exclusão
+activate Anuncio
+Anuncio --> Sistema : 29. status = removido
+deactivate Anuncio
+Sistema --> Vendedor : 30. anúncio removido
 deactivate Sistema
 
-' Acompanhar status
-Comprador -> Sistema : 32. acompanharStatus(anuncioId)
+== Buscar, Visualizar e Acompanhar Veículos ==
+Comprador -> Sistema : 31. buscarVeiculo()
 activate Sistema
-Sistema -> Anuncio : 33. consultarStatus()
-Anuncio --> Sistema : 34. status atual
-Sistema --> Comprador : 35. status
+Sistema -> Anuncio : 32. filtrar por descrição/preço
+activate Anuncio
+Anuncio --> Sistema : 33. lista de anúncios
+deactivate Anuncio
+Sistema --> Comprador : 34. resultados encontrados
 deactivate Sistema
 
-' Iniciar negociação
-Comprador -> Sistema : 36. iniciarNegociacao(vendedor, anuncio)
+Comprador -> Sistema : 35. visualizarDetalhes(anuncio)
 activate Sistema
-Sistema -> Negociacao : 37. iniciarNegociacao()
-Negociacao --> Sistema : 38. status = em andamento
-Sistema --> Comprador : 39. negociação iniciada
+Sistema -> Anuncio : 36. detalhes do anúncio
+activate Anuncio
+Anuncio --> Sistema : 37. dados do anúncio
+deactivate Anuncio
+Sistema --> Comprador : 38. exibe detalhes
 deactivate Sistema
 
-' Enviar mensagem
-Comprador -> Sistema : 40. enviarMensagem(destinatario, conteudo)
+Comprador -> Sistema : 39. acompanharStatus(anuncio)
 activate Sistema
-Sistema -> Mensagem : 41. enviarMensagem()
-Mensagem --> Sistema : 42. entregue
-Sistema --> Comprador : 43. mensagem enviada
+Sistema -> Anuncio : 40. status do anúncio
+activate Anuncio
+Anuncio --> Sistema : 41. status atual
+deactivate Anuncio
+Sistema --> Comprador : 42. status exibido
 deactivate Sistema
 
-' Confirmar pagamento
-Comprador -> Sistema : 44. confirmarPagamento()
+== Negociação e Pagamento ==
+Comprador -> Sistema : 43. iniciarNegociacao(vendedor, anuncio)
 activate Sistema
-Sistema -> Pagamento : 45. confirmarPagamento()
-Pagamento --> Sistema : 46. status = pago
-Sistema --> Comprador : 47. pagamento confirmado
+Sistema -> Negociacao : 44. iniciar negociação
+activate Negociacao
+Negociacao --> Sistema : 45. status = em andamento
+deactivate Negociacao
+Sistema --> Comprador : 46. negociação iniciada
 deactivate Sistema
 
-' Excluir perfil
-Comprador -> Sistema : 48. excluirPerfil()
+Comprador -> Sistema : 47. enviarMensagem()
 activate Sistema
-Sistema -> Usuario : 49. excluirPerfil()
-Usuario --> Sistema : 50. perfil removido
-Sistema --> Comprador : 51. perfil excluído
+Sistema -> Mensagem : 48. enviar para vendedor
+activate Mensagem
+Mensagem --> Sistema : 49. mensagem registrada
+deactivate Mensagem
+Sistema --> Comprador : 50. mensagem enviada
+deactivate Sistema
+
+Comprador -> Sistema : 51. confirmarPagamento()
+activate Sistema
+Sistema -> Pagamento : 52. registrar pagamento
+activate Pagamento
+Pagamento --> Sistema : 53. status = pago
+deactivate Pagamento
+Sistema --> Comprador : 54. pagamento confirmado
+deactivate Sistema
+
+== Histórico ==
+Comprador -> Sistema : 55. consultarHistoricoCompras()
+activate Sistema
+Sistema -> HistoricoTransacoes : 56. buscar compras
+activate HistoricoTransacoes
+HistoricoTransacoes --> Sistema : 57. lista de transações
+deactivate HistoricoTransacoes
+Sistema --> Comprador : 58. histórico exibido
+deactivate Sistema
+
+Vendedor -> Sistema : 59. consultarHistoricoVendas()
+activate Sistema
+Sistema -> HistoricoTransacoes : 60. buscar vendas
+activate HistoricoTransacoes
+HistoricoTransacoes --> Sistema : 61. lista de vendas
+deactivate HistoricoTransacoes
+Sistema --> Vendedor : 62. histórico exibido
 deactivate Sistema
 
 @enduml
