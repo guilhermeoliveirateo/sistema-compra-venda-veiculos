@@ -9,7 +9,7 @@
 ``` plantuml
 @startuml
 
-Title Diagrama de Sequência Unificado - Sistema de Compra e Venda de Veículos
+Title Diagrama de Sequência - Sistema de Compra e Venda de Veículos
 
 actor Comprador
 actor Vendedor
