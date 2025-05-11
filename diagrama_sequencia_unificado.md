@@ -61,24 +61,30 @@ deactivate Sistema
 
 Vendedor -> Sistema : 17. criarAnuncio()
 activate Sistema
-Sistema -> Veiculo : 18. criarVeiculo(...)
+Sistema -> Veiculo : 18. criarVeiculo(tipo, marca, modelo, ano, km)
 activate Veiculo
 Veiculo --> Sistema : 19. veiculoCriado
-Sistema -> Anuncio : 20-23. adicionar info (descrição, preço, fotos, local)
+deactivate Veiculo
+Sistema -> Anuncio : 20. adicionarDescricao(descricao)
+Sistema -> Anuncio : 21. adicionarPreco(preco)
+Sistema -> Anuncio : 22. adicionarFotos(fotos)
+Sistema -> Anuncio : 23. adicionarLocalizacao(localizacao)
 activate Anuncio
 Anuncio --> Sistema : 24. anuncioCriado
-Sistema --> Vendedor : 25. anuncioPublicado
-deactivate Veiculo
 deactivate Anuncio
+Sistema --> Vendedor : 25. anuncioPublicado
 deactivate Sistema
 
 Vendedor -> Sistema : 26. editarAnuncio()
 activate Sistema
-Sistema -> Anuncio : 27-30. alterar info
+Sistema -> Anuncio : 27. alterarDescricao(descricao)
+Sistema -> Anuncio : 28. alterarPreco(preco)
+Sistema -> Anuncio : 29. alterarFotos(fotos)
+Sistema -> Anuncio : 30. alterarLocalizacao(localizacao)
 activate Anuncio
 Anuncio --> Sistema : 31. anuncioAtualizado
-Sistema --> Vendedor : 32. edicaoConcluida
 deactivate Anuncio
+Sistema --> Vendedor : 32. edicaoConcluida
 deactivate Sistema
 
 Vendedor -> Sistema : 33. removerAnuncio()
