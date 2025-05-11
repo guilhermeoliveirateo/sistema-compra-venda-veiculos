@@ -2,7 +2,6 @@
 
 ```plantuml
 @startuml
-title Diagrama de Sequência Integrado - Sistema de Compra e Venda de Veículos
 
 actor Comprador
 actor Vendedor
