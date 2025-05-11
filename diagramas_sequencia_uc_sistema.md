@@ -74,10 +74,10 @@ deactivate Sistema
 
 Vendedor -> Sistema : 26. editarAnuncio()
 activate Sistema
-Sistema -> Anuncio : 27. alterarDescricao()
-Sistema -> Anuncio : 28. alterarPreco()
-Sistema -> Anuncio : 29. alterarFotos()
-Sistema -> Anuncio : 30. alterarLocalizacao()
+Sistema -> Anuncio : 27. alterarDescricao(descricao)
+Sistema -> Anuncio : 28. alterarPreco(preco)
+Sistema -> Anuncio : 29. alterarFotos(fotos)
+Sistema -> Anuncio : 30. alterarLocalizacao(localizacao)
 activate Anuncio
 Anuncio --> Sistema : 31. anuncioAtualizado
 deactivate Anuncio
@@ -86,7 +86,7 @@ deactivate Sistema
 
 Vendedor -> Sistema : 33. removerAnuncio()
 activate Sistema
-Sistema -> Anuncio : 34. adicionarMotivoExclusao
+Sistema -> Anuncio : 34. adicionarMotivoExclusao(motivoExclusao)
 activate Anuncio
 Anuncio --> Sistema : 35. statusRemovido
 deactivate Anuncio
@@ -95,14 +95,14 @@ deactivate Sistema
 
 Comprador -> Sistema : 37. buscarVeiculo()
 activate Sistema
-Sistema -> Anuncio : 38. filtrarDescricaoPreco
+Sistema -> Anuncio : 38. filtrarDescricaoPreco(descricao, preco)
 activate Anuncio
 Anuncio --> Sistema : 39. listaAnuncios
 deactivate Anuncio
 Sistema --> Comprador : 40. resultadosEncontrados
 deactivate Sistema
 
-Comprador -> Sistema : 41. visualizarDetalhes(anuncio)
+Comprador -> Sistema : 41. visualizarDetalhes()
 activate Sistema
 Sistema -> Anuncio : 42. detalhesAnuncio
 activate Anuncio
@@ -111,7 +111,7 @@ deactivate Anuncio
 Sistema --> Comprador : 44. exibeDetalhes
 deactivate Sistema
 
-Comprador -> Sistema : 45. acompanharStatus(anuncio)
+Comprador -> Sistema : 45. acompanharStatus()
 activate Sistema
 Sistema -> Anuncio : 46. statusAnuncio
 activate Anuncio
