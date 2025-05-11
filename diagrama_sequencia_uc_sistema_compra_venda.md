@@ -39,51 +39,51 @@ Sistema -> Mensagem : 10. salvarResposta()
 Mensagem --> Sistema : 11. respostaSalva
 Sistema --> Vendedor : 12. respostaEnviada
 
-Vendedor -> Sistema : 13. definirComoVendido(veiculo)
+Vendedor -> Sistema : 13. definirComoVendido()
 activate Sistema
 Sistema -> Pagamento : 14. verificarPagamento()
 activate Pagamento
-Pagamento --> Sistema : 15. pagamento confirmado
+Pagamento --> Sistema : 15. pagamentoConfirmado
 
 Sistema -> Sistema : 16. notificarConfirmacao()
 activate Sistema
-Sistema --> Vendedor : 17. confirmação enviada
+Sistema --> Vendedor : 17. confirmacaoEnviada
 
-Sistema -> Veiculo : 18. alterarStatus(vendido)
+Sistema -> Veiculo : 18. alterarStatus()
 activate Veiculo
-Veiculo --> Sistema : 19. status alterado
-Sistema --> Vendedor : 20. veículo marcado como vendido
+Veiculo --> Sistema : 19. statusAlterado
+Sistema --> Vendedor : 20. veiculoMarcadoVendido
 
 Vendedor -> Sistema : 21. consultarHistoricoVendas()
 activate HistoricoTransacoes
-Sistema -> HistoricoTransacoes : 22. buscarTransacoes(tipo=venda)
-HistoricoTransacoes --> Sistema : 23. transações encontradas
-Sistema --> Vendedor : 24. histórico de vendas
+Sistema -> HistoricoTransacoes : 22. buscarTransacoes()
+HistoricoTransacoes --> Sistema : 23. transacoesEncontradas
+Sistema --> Vendedor : 24. historicoVendas
 
-Sistema -> Sistema : 25. visualizarDetalhesVenda(id)
+Sistema -> Sistema : 25. visualizarDetalhesVenda()
 activate Sistema
-Sistema --> Vendedor : 26. detalhes da venda
+Sistema --> Vendedor : 26. detalhesVenda
 
 Comprador -> Sistema : 27. consultarHistoricoCompras()
-Sistema -> HistoricoTransacoes : 28. buscarTransacoes(tipo=compra)
-HistoricoTransacoes --> Sistema : 29. transações encontradas
-Sistema --> Comprador : 30. histórico de compras
+Sistema -> HistoricoTransacoes : 28. buscarTransacoes()
+HistoricoTransacoes --> Sistema : 29. transacoesEncontradas
+Sistema --> Comprador : 30. historicoCompras
 
-Sistema -> Sistema : 31. visualizarDetalhesCompra(id)
+Sistema -> Sistema : 31. visualizarDetalhesCompra()
 activate Sistema
-Sistema --> Comprador : 32. detalhes da compra
+Sistema --> Comprador : 32. detalhesCompra
 
 Admin -> Sistema : 33. gerenciarUsuarios()
 activate Usuario
 Sistema -> Usuario : 34. listar/editar/excluir
-Usuario --> Sistema : 35. operação concluída
-Sistema --> Admin : 36. gestão concluo conclu\uída
+Usuario --> Sistema : 35. operacaoConcluida
+Sistema --> Admin : 36. gestaoUsuariosConcluida
 
 Admin -> Sistema : 37. gerenciarAnuncios()
 activate Anuncio
 Sistema -> Anuncio : 38. listar/editar/remover
-Anuncio --> Sistema : 39. operação concluída
-Sistema --> Admin : 40. gestão de anúncio concluída
+Anuncio --> Sistema : 39. operacaoConcluida
+Sistema --> Admin : 40. gestaoAnunciosConcluida
 
 deactivate Sistema
 @enduml
