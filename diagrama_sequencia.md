@@ -41,7 +41,7 @@ Sistema --> Comprador : 8. loginRealizado
 deactivate Usuario
 deactivate Sistema
 
-Comprador -> Sistema : 9. editarPerfil(nome, email, senha, telefone, endereco)
+Comprador -> Sistema : 9. editarPerfil(usuario, nome, email, senha, telefone, endereco)
 activate Sistema
 Sistema -> Usuario : 10. editarDados
 activate Usuario
@@ -50,7 +50,7 @@ Sistema --> Comprador : 12. perfilAtualizado
 deactivate Usuario
 deactivate Sistema
 
-Comprador -> Sistema : 13. excluirPerfil()
+Comprador -> Sistema : 13. excluirPerfil(usuario)
 activate Sistema
 Sistema -> Usuario : 14. excluirUsuario
 activate Usuario
@@ -75,7 +75,7 @@ deactivate Anuncio
 Sistema --> Vendedor : 25. anuncioPublicado
 deactivate Sistema
 
-Vendedor -> Sistema : 26. editarAnuncio()
+Vendedor -> Sistema : 26. editarAnuncio(anuncio)
 activate Sistema
 Sistema -> Anuncio : 27. alterarDescricao(descricao)
 Sistema -> Anuncio : 28. alterarPreco(preco)
@@ -87,9 +87,9 @@ deactivate Anuncio
 Sistema --> Vendedor : 32. edicaoConcluida
 deactivate Sistema
 
-Vendedor -> Sistema : 33. removerAnuncio()
+Vendedor -> Sistema : 33. removerAnuncio(anuncio)
 activate Sistema
-Sistema -> Anuncio : 34. adicionarMotivoExclusao()
+Sistema -> Anuncio : 34. adicionarMotivoExclusao(motivoExclusao)
 activate Anuncio
 Anuncio --> Sistema : 35. statusRemovido
 Sistema --> Vendedor : 36. anuncioRemovido
@@ -105,7 +105,7 @@ Sistema --> Comprador : 40. resultadosEncontrados
 deactivate Anuncio
 deactivate Sistema
 
-Comprador -> Sistema : 41. visualizarDetalhes()
+Comprador -> Sistema : 41. visualizarDetalhes(anuncio)
 activate Sistema
 Sistema -> Anuncio : 42. detalhesAnuncio
 activate Anuncio
@@ -114,7 +114,7 @@ Sistema --> Comprador : 44. exibeDetalhes
 deactivate Anuncio
 deactivate Sistema
 
-Comprador -> Sistema : 45. acompanharStatus()
+Comprador -> Sistema : 45. acompanharStatus(anuncio)
 activate Sistema
 Sistema -> Anuncio : 46. statusAnuncio
 activate Anuncio
