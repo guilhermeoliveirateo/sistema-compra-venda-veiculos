@@ -22,69 +22,75 @@ participant HistoricoTransacoes
 
 Comprador -> Sistema : 1. criarPerfil()
 activate Sistema
-Sistema -> Usuario : 2. salvar novo usuário
+Sistema -> Usuario : 2. salvarUsuario
 activate Usuario
-Usuario --> Sistema : 3. confirmação
+Usuario --> Sistema : 3. confirmacaoPerfil
 deactivate Usuario
-Sistema --> Comprador : 4. perfil criado
+Sistema --> Comprador : 4. perfilCriado
 deactivate Sistema
 
 Comprador -> Sistema : 5. fazerLogin(email, senha)
 activate Sistema
 Sistema -> Usuario : 6. verificarSenha()
 activate Usuario
-Usuario --> Sistema : 7. senha válida
+Usuario --> Sistema : 7. senhaValida
 deactivate Usuario
-Sistema --> Comprador : 8. login realizado
+Sistema --> Comprador : 8. loginRealizado
 deactivate Sistema
 
 Comprador -> Sistema : 9. editarPerfil()
 activate Sistema
-Sistema -> Usuario : 10. editar dados
+Sistema -> Usuario : 10. editarDados
 activate Usuario
-Usuario --> Sistema : 11. dados atualizados
+Usuario --> Sistema : 11. dadosAtualizados
 deactivate Usuario
-Sistema --> Comprador : 12. perfil atualizado
+Sistema --> Comprador : 12. perfilAtualizado
 deactivate Sistema
 
 Comprador -> Sistema : 13. excluirPerfil()
 activate Sistema
-Sistema -> Usuario : 14. excluirPerfil()
+Sistema -> Usuario : 14. excluirUsuario
 activate Usuario
-Usuario --> Sistema : 15. confirmação de exclusão
+Usuario --> Sistema : 15. confirmaçãoExclusao
 deactivate Usuario
-Sistema --> Comprador : 16. perfil excluído
+Sistema --> Comprador : 16. perfilExcluido
 deactivate Sistema
 
 Vendedor -> Sistema : 17. criarAnuncio()
 activate Sistema
 Sistema -> Veiculo : 18. adicionarVeiculo()
 activate Veiculo
-Veiculo --> Sistema : 19. veiculo criado
+Veiculo --> Sistema : 19. veiculoCriado
 deactivate Veiculo
-Sistema -> Anuncio : 20. adicionar descrição, preço, fotos, localização
+Sistema -> Anuncio : 20. adicionarDescricao()
+Sistema -> Anuncio : 21. adicionarPreco()
+Sistema -> Anuncio : 22. adicionarFotos()
+Sistema -> Anuncio : 23. adicionarLocalizacao()
 activate Anuncio
-Anuncio --> Sistema : 21. anúncio criado
+Anuncio --> Sistema : 24. anuncioCriado
 deactivate Anuncio
-Sistema --> Vendedor : 22. anúncio publicado
+Sistema --> Vendedor : 25. anuncioPublicado
 deactivate Sistema
 
-Vendedor -> Sistema : 23. editarAnuncio()
+Vendedor -> Sistema : 26. editarAnuncio()
 activate Sistema
-Sistema -> Anuncio : 24. alterar descrição, preço, fotos, localização
+Sistema -> Anuncio : 27. alterarDescricao()
+Sistema -> Anuncio : 28. alterarPreco()
+Sistema -> Anuncio : 29. alterarFotos()
+Sistema -> Anuncio : 30. alterarLocalizacao()
 activate Anuncio
-Anuncio --> Sistema : 25. anúncio atualizado
+Anuncio --> Sistema : 31. anuncioAtualizado
 deactivate Anuncio
-Sistema --> Vendedor : 26. edição concluída
+Sistema --> Vendedor : 32. edicaoConcluida
 deactivate Sistema
 
 Vendedor -> Sistema : 27. removerAnuncio()
 activate Sistema
-Sistema -> Anuncio : 28. adicionar motivo da exclusão
+Sistema -> Anuncio : 28. adicionarMotivoExclusao
 activate Anuncio
-Anuncio --> Sistema : 29. status = removido
+Anuncio --> Sistema : 29. statusRemovido
 deactivate Anuncio
-Sistema --> Vendedor : 30. anúncio removido
+Sistema --> Vendedor : 30. anuncioRemovido
 deactivate Sistema
 
 Comprador -> Sistema : 31. buscarVeiculo()
