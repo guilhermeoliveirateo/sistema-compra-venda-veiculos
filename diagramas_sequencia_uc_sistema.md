@@ -84,85 +84,85 @@ deactivate Anuncio
 Sistema --> Vendedor : 32. edicaoConcluida
 deactivate Sistema
 
-Vendedor -> Sistema : 27. removerAnuncio()
+Vendedor -> Sistema : 33. removerAnuncio()
 activate Sistema
-Sistema -> Anuncio : 28. adicionarMotivoExclusao
+Sistema -> Anuncio : 34. adicionarMotivoExclusao
 activate Anuncio
-Anuncio --> Sistema : 29. statusRemovido
+Anuncio --> Sistema : 35. statusRemovido
 deactivate Anuncio
-Sistema --> Vendedor : 30. anuncioRemovido
+Sistema --> Vendedor : 36. anuncioRemovido
 deactivate Sistema
 
-Comprador -> Sistema : 31. buscarVeiculo()
+Comprador -> Sistema : 37. buscarVeiculo()
 activate Sistema
-Sistema -> Anuncio : 32. filtrar por descrição/preço
+Sistema -> Anuncio : 38. filtrarDescricaoPreco
 activate Anuncio
-Anuncio --> Sistema : 33. lista de anúncios
+Anuncio --> Sistema : 39. listaAnuncios
 deactivate Anuncio
-Sistema --> Comprador : 34. resultados encontrados
+Sistema --> Comprador : 40. resultadosEncontrados
 deactivate Sistema
 
-Comprador -> Sistema : 35. visualizarDetalhes(anuncio)
+Comprador -> Sistema : 41. visualizarDetalhes(anuncio)
 activate Sistema
-Sistema -> Anuncio : 36. detalhes do anúncio
+Sistema -> Anuncio : 42. detalhesAnuncio
 activate Anuncio
-Anuncio --> Sistema : 37. dados do anúncio
+Anuncio --> Sistema : 43. dadosAnuncio
 deactivate Anuncio
-Sistema --> Comprador : 38. exibe detalhes
+Sistema --> Comprador : 44. exibeDetalhes
 deactivate Sistema
 
-Comprador -> Sistema : 39. acompanharStatus(anuncio)
+Comprador -> Sistema : 45. acompanharStatus(anuncio)
 activate Sistema
-Sistema -> Anuncio : 40. status do anúncio
+Sistema -> Anuncio : 46. statusAnuncio
 activate Anuncio
-Anuncio --> Sistema : 41. status atual
+Anuncio --> Sistema : 47. statusAtual
 deactivate Anuncio
-Sistema --> Comprador : 42. status exibido
+Sistema --> Comprador : 48. statusExibido
 deactivate Sistema
 
-Comprador -> Sistema : 43. iniciarNegociacao(vendedor, anuncio)
+Comprador -> Sistema : 49. iniciarNegociacao(vendedor, anuncio)
 activate Sistema
-Sistema -> Negociacao : 44. iniciar negociação
+Sistema -> Negociacao : 50. iniciarNegociacao
 activate Negociacao
-Negociacao --> Sistema : 45. status = em andamento
+Negociacao --> Sistema : 51. statusEmAndamento
 deactivate Negociacao
-Sistema --> Comprador : 46. negociação iniciada
+Sistema --> Comprador : 52. negociacaoIniciada
 deactivate Sistema
 
-Comprador -> Sistema : 47. enviarMensagem()
+Comprador -> Sistema : 53. enviarMensagem()
 activate Sistema
-Sistema -> Mensagem : 48. enviar para vendedor
+Sistema -> Mensagem : 54. enviarVendedor
 activate Mensagem
-Mensagem --> Sistema : 49. mensagem registrada
+Mensagem --> Sistema : 55. mensagemRegistrada
 deactivate Mensagem
-Sistema --> Comprador : 50. mensagem enviada
+Sistema --> Comprador : 56. mensagemEnviada
 deactivate Sistema
 
-Comprador -> Sistema : 51. confirmarPagamento()
+Comprador -> Sistema : 57. confirmarPagamento()
 activate Sistema
-Sistema -> Pagamento : 52. registrar pagamento
+Sistema -> Pagamento : 58. registrarPagamento
 activate Pagamento
-Pagamento --> Sistema : 53. status = pago
+Pagamento --> Sistema : 59. statusPago
 deactivate Pagamento
-Sistema --> Comprador : 54. pagamento confirmado
+Sistema --> Comprador : 60. pagamentoConfirmado
 deactivate Sistema
 
-Comprador -> Sistema : 55. consultarHistoricoCompras()
+Comprador -> Sistema : 61. consultarHistoricoCompras()
 activate Sistema
-Sistema -> HistoricoTransacoes : 56. buscar compras
+Sistema -> HistoricoTransacoes : 62. buscarCompras
 activate HistoricoTransacoes
-HistoricoTransacoes --> Sistema : 57. lista de transações
+HistoricoTransacoes --> Sistema : 63. listaTransacoes
 deactivate HistoricoTransacoes
-Sistema --> Comprador : 58. histórico exibido
+Sistema --> Comprador : 64. historicoExibido
 deactivate Sistema
 
-Vendedor -> Sistema : 59. consultarHistoricoVendas()
+Vendedor -> Sistema : 65. consultarHistoricoVendas()
 activate Sistema
-Sistema -> HistoricoTransacoes : 60. buscar vendas
+Sistema -> HistoricoTransacoes : 66. buscarVendas
 activate HistoricoTransacoes
-HistoricoTransacoes --> Sistema : 61. lista de vendas
+HistoricoTransacoes --> Sistema : 67. listaVendas
 deactivate HistoricoTransacoes
-Sistema --> Vendedor : 62. histórico exibido
+Sistema --> Vendedor : 68. historicoExibido
 deactivate Sistema
 
 @enduml
