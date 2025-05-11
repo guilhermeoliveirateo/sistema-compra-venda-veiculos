@@ -1,4 +1,4 @@
-# Diagrama de Sequência Integrado - Sistema de Compra e Venda de Veículos (Mensagens Numeradas)
+# Diagrama de Sequência Integrado - Sistema de Compra e Venda de Veículos
 
 ```plantuml
 @startuml
