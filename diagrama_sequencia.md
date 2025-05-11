@@ -98,7 +98,7 @@ deactivate Sistema
 
 Comprador -> Sistema : 37. buscarVeiculo()
 activate Sistema
-Sistema -> Anuncio : 38. filtrarDescricaoPreco()
+Sistema -> Anuncio : 38. filtrarDescricaoPreco(descricao, preco)
 activate Anuncio
 Anuncio --> Sistema : 39. listaAnuncios
 Sistema --> Comprador : 40. resultadosEncontrados
@@ -168,7 +168,7 @@ Pagamento --> Sistema : 67. pagamentoConfirmado
 Sistema -> Sistema : 68. notificarConfirmacao()
 Sistema --> Vendedor : 69. confirmacaoEnviada
 
-Sistema -> Veiculo : 70. alterarStatus(vendido)
+Sistema -> Veiculo : 70. alterarStatus()
 activate Veiculo
 Veiculo --> Sistema : 71. statusAlterado
 Sistema --> Vendedor : 72. veiculoMarcadoVendido
@@ -202,14 +202,14 @@ Sistema --> Comprador : 84. detalhesCompra
 
 Admin -> Sistema : 85. gerenciarUsuarios()
 activate Usuario
-Sistema -> Usuario : 86. listar/editar/excluir
+Sistema -> Usuario : 86. listarEditarExcluirUsuarios
 Usuario --> Sistema : 87. operacaoConcluida
 Sistema --> Admin : 88. gestaoUsuariosConcluida
 deactivate Usuario
 
 Admin -> Sistema : 89. gerenciarAnuncios()
 activate Anuncio
-Sistema -> Anuncio : 90. listar/editar/remover
+Sistema -> Anuncio : 90. listarEditarExcluirAnuncios
 Anuncio --> Sistema : 91. operacaoConcluida
 Sistema --> Admin : 92. gestaoAnunciosConcluida
 deactivate Anuncio
