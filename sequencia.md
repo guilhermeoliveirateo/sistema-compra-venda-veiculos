@@ -1,4 +1,4 @@
-# Diagrama de Sequência Unificado - Todos os Casos de Uso
+# Diagrama de Sequência de Mensagens
 
 ```plantuml
 @startuml
