@@ -1,7 +1,7 @@
 # Diagrama de Transição de Estado — Sistema de Compra e Venda de Veículos
 
 ```plantuml
-' ============================
+'' ============================
 ' Diagrama de estado do ANÚNCIO
 ' ============================
 state "Anúncio" as Anuncio {
@@ -10,9 +10,12 @@ state "Anúncio" as Anuncio {
   Publicado --> EmNegociacao : Negociação iniciada
   EmNegociacao --> Vendido : Confirmação de pagamento
   Vendido --> Arquivado : Finalização
+  Arquivado --> [*]
+
   Publicado --> Editado : Editar conteúdo
   Editado --> Publicado : Salvar edição
   Publicado --> Removido : Remoção manual
+  Removido --> [*]
 }
 
 ' ============================
@@ -24,7 +27,10 @@ state "Veículo" as Veiculo {
   Anunciado --> EmNegociacao : Negociação ativa
   EmNegociacao --> Vendido : Confirmação da venda
   Vendido --> Arquivado : Concluído
+  Arquivado --> [*]
+
   Registrado --> Inativo : Nunca anunciado
+  Inativo --> [*]
   Anunciado --> Inativo : Anúncio removido
 }
 
@@ -39,6 +45,7 @@ state "Usuário" as Usuario {
   Ativo --> Inativo : Pausar conta
   Inativo --> Ativo : Reativar
   Ativo --> Excluido : Deletar conta
+  Excluido --> [*]
 }
 
 ' ================== Diagrama de Estado: Pagamento ==================
