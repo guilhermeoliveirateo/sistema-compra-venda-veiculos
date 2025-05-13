@@ -1,45 +1,44 @@
 # Diagrama de Transição de Estado — Sistema de Compra e Venda de Veículos
 
 ```plantuml
-' ================== Diagrama de Estado: Anúncio ==================
+' ============================
+' Diagrama de estado do ANÚNCIO
+' ============================
 state "Anúncio" as Anuncio {
-  [*] --> Criado : Criar anúncio
-  Criado --> Ativo : Publicar anúncio
-  Ativo --> EmNegociacao : Iniciar negociação
-  EmNegociacao --> Vendido : Confirmar pagamento\nDefinir como vendido
-  EmNegociacao --> Ativo : Cancelar negociação
-  Ativo --> Editado : Editar anúncio
-  Editado --> Ativo : Publicar alterações
-  Ativo --> Removido : Remover anúncio\nAdicionar motivo
-  Vendido --> Arquivado : Concluir venda
-  Removido --> [*]
-  Arquivado --> [*]
+  [*] --> Rascunho : Criar
+  Rascunho --> Publicado : Publicar
+  Publicado --> EmNegociacao : Negociação iniciada
+  EmNegociacao --> Vendido : Confirmação de pagamento
+  Vendido --> Arquivado : Finalização
+  Publicado --> Editado : Editar conteúdo
+  Editado --> Publicado : Salvar edição
+  Publicado --> Removido : Remoção manual
 }
 
-' ================== Diagrama de Estado: Veículo ==================
+' ============================
+' Diagrama de estado do VEÍCULO
+' ============================
 state "Veículo" as Veiculo {
-  [*] --> Criado : Criar veículo
-  Criado --> Disponível : Associar a um anúncio
-  Disponível --> EmNegociacao : Iniciar negociação
-  EmNegociacao --> Vendido : Confirmar venda
-  Vendido --> Arquivado : Encerrar venda
-  Disponível --> Editado : Editar veículo
-  Editado --> Disponível : Salvar alterações
-  Disponível --> Removido : Remover veículo
-  Removido --> [*]
-  Arquivado --> [*]
+  [*] --> Registrado : Cadastrado no sistema
+  Registrado --> Anunciado : Associado a anúncio
+  Anunciado --> EmNegociacao : Negociação ativa
+  EmNegociacao --> Vendido : Confirmação da venda
+  Vendido --> Arquivado : Concluído
+  Registrado --> Inativo : Nunca anunciado
+  Anunciado --> Inativo : Anúncio removido
 }
 
-' ================== Diagrama de Estado: Usuário ==================
+' ============================
+' Diagrama de estado do USUÁRIO
+' ============================
 state "Usuário" as Usuario {
-  [*] --> Registrado : Criar perfil
-  Registrado --> Ativo : Verificar email / Login válido
-  Ativo --> Editado : Editar perfil
-  Editado --> Ativo : Salvar alterações
-  Ativo --> Inativo : Inatividade\nViolação de regras
-  Ativo --> Excluido : Excluir conta
-  Excluido --> [*]
-  Inativo --> Ativo : Reativar conta
+  [*] --> Registrado : Cadastro
+  Registrado --> Ativo : Login confirmado
+  Ativo --> Editando : Alteração de perfil
+  Editando --> Ativo : Confirmação de edição
+  Ativo --> Inativo : Pausar conta
+  Inativo --> Ativo : Reativar
+  Ativo --> Excluido : Deletar conta
 }
 
 ' ================== Diagrama de Estado: Pagamento ==================
