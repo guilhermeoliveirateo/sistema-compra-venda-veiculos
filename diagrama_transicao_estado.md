@@ -1,7 +1,8 @@
-# Diagrama de Transição de Estado — Sistema de Compra e Venda de Veículos
-
 ```plantuml
-'' ============================
+@startuml
+title Diagrama de Transição de Estado – Sistema de Compra e Venda de Veículos
+
+' ============================
 ' Diagrama de estado do ANÚNCIO
 ' ============================
 state "Anúncio" as Anuncio {
@@ -48,24 +49,31 @@ state "Usuário" as Usuario {
   Excluido --> [*]
 }
 
-' ================== Diagrama de Estado: Pagamento ==================
+' ============================
+' Diagrama de estado do PAGAMENTO
+' ============================
 state "Pagamento" as Pagamento {
-  [*] --> Pendente : Iniciar negociação
-  Pendente --> EmProcessamento : Efetuar pagamento
-  EmProcessamento --> Confirmado : API confirma
-  EmProcessamento --> Falhou : Erro no pagamento
-  Confirmado --> Notificado : Enviar confirmação
-  Notificado --> [*]
-  Falhou --> [*]
+  [*] --> Pendente : Início do processo
+  Pendente --> EmProcessamento : Processando dados
+  EmProcessamento --> Confirmado : Confirmação pelo sistema
+  Confirmado --> Concluido : Repasse efetuado
+  Concluido --> [*]
+
+  Pendente --> Cancelado : Erro ou desistência
+  Cancelado --> [*]
 }
 
-' ================== Diagrama de Estado: Negociação ==================
+' ============================
+' Diagrama de estado da NEGOCIAÇÃO
+' ============================
 state "Negociação" as Negociacao {
-  [*] --> Iniciada : Comprador inicia
-  Iniciada --> EmAndamento : Troca de mensagens
-  EmAndamento --> Concluida : Confirmação da venda
-  EmAndamento --> Cancelada : Cancelamento
-  Concluida --> [*]
+  [*] --> Iniciada : Contato inicial
+  Iniciada --> EmAndamento : Envio de mensagens
+  EmAndamento --> Aceita : Termos definidos
+  Aceita --> Finalizada : Venda confirmada
+  Finalizada --> [*]
+
+  EmAndamento --> Cancelada : Desistência
   Cancelada --> [*]
 }
 @enduml
