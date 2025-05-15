@@ -1,10 +1,15 @@
+# Diagrama de Transição de Estado
+
+# Grupo
+
+- Guilherme Teodoro de Oliveira RA: 10425362
+- Luís Henrique Ribeiro Fernandes RA: 10420079
+- Vinícius Brait Lorimier RA: 10420046
+
+
 ```plantuml
 @startuml
-title Diagrama de Transição de Estado – Sistema de Compra e Venda de Veículos
 
-' ============================
-' Diagrama de estado do ANÚNCIO
-' ============================
 state "Anúncio" as Anuncio {
   [*] --> Rascunho : Criar
   Rascunho --> Publicado : Publicar
@@ -19,9 +24,6 @@ state "Anúncio" as Anuncio {
   Removido --> [*]
 }
 
-' ============================
-' Diagrama de estado do VEÍCULO
-' ============================
 state "Veículo" as Veiculo {
   [*] --> Registrado : Cadastrado no sistema
   Registrado --> Anunciado : Associado a anúncio
@@ -35,9 +37,6 @@ state "Veículo" as Veiculo {
   Anunciado --> Inativo : Anúncio removido
 }
 
-' ============================
-' Diagrama de estado do USUÁRIO
-' ============================
 state "Usuário" as Usuario {
   [*] --> Registrado : Cadastro
   Registrado --> Ativo : Login confirmado
@@ -49,9 +48,6 @@ state "Usuário" as Usuario {
   Excluido --> [*]
 }
 
-' ============================
-' Diagrama de estado do PAGAMENTO
-' ============================
 state "Pagamento" as Pagamento {
   [*] --> Pendente : Início do processo
   Pendente --> EmProcessamento : Processando dados
@@ -63,9 +59,6 @@ state "Pagamento" as Pagamento {
   Cancelado --> [*]
 }
 
-' ============================
-' Diagrama de estado da NEGOCIAÇÃO
-' ============================
 state "Negociação" as Negociacao {
   [*] --> Iniciada : Contato inicial
   Iniciada --> EmAndamento : Envio de mensagens
