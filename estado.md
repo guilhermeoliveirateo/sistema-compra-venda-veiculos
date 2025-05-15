@@ -1,18 +1,21 @@
 ```plantuml
 @startuml
-title Diagrama de Transição de Estado - Sistema Completo
+skinparam state {
+  BackgroundColor<<final>> LightGray
+}
 
-[*] --> Criando perfil
+[*] --> Criando_perfil
 
-Criando perfil --> Fazendo login : Após criação
-Fazendo login --> Editando perfil : Ação do usuário
-Editando perfil --> Visualizando perfil
-Visualizando perfil --> Fazendo login
+state "Fluxo Principal" as Fluxo {
+  Criando_perfil --> Fazendo_login : Após criação
+  Fazendo_login --> Editando_perfil : Ação do usuário
+  Editando_perfil --> Visualizando_perfil
+  Visualizando_perfil --> Fazendo_login
 
-Fazendo login --> Buscando veículos
-Fazendo login --> Criando anúncio
-Fazendo login --> Excluindo perfil : Solicitação do usuário
-Excluindo perfil --> [*]
+  Fazendo_login --> Buscando_veiculos
+  Fazendo_login --> Criando_anuncio
+  Fazendo_login --> Excluindo_perfil : Solicitação
+  Excluindo_perfil --> [*]
 
 Buscando veículos --> Visualizando detalhes
 Visualizando detalhes --> Iniciando negociação
