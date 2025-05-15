@@ -1,4 +1,5 @@
-```@startuml
+```plantuml
+@startuml
 title Diagrama de Transição de Estado - Sistema Completo
 
 [*] --> Criando perfil
