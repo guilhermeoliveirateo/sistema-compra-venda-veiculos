@@ -11,63 +11,63 @@
 @startuml
 
 state "Anúncio" as Anuncio {
-  [*] --> Rascunho : Criar
-  Rascunho --> Publicado : Publicar
-  Publicado --> EmNegociacao : Negociação iniciada
-  EmNegociacao --> Vendido : Confirmação de pagamento
-  Vendido --> Arquivado : Finalização
-  Arquivado --> [*]
+  [*] --> Criando : Criar
+  Criando --> Publicando : Publicar
+  Publicando --> Negociando : Negociação iniciada
+  Negociando --> Vendendo : Confirmação de pagamento
+  Vendendo --> Arquivando : Finalização
+  Arquivando --> [*]
 
-  Publicado --> Editado : Editar conteúdo
-  Editado --> Publicado : Salvar edição
-  Publicado --> Removido : Remoção manual
-  Removido --> [*]
+  Publicando --> Editando : Editar conteúdo
+  Editando --> Publicando : Salvar edição
+  Publicando --> Removendo : Remoção manual
+  Removendo --> [*]
 }
 
 state "Veículo" as Veiculo {
-  [*] --> Registrado : Cadastrado no sistema
-  Registrado --> Anunciado : Associado a anúncio
-  Anunciado --> EmNegociacao : Negociação ativa
-  EmNegociacao --> Vendido : Confirmação da venda
-  Vendido --> Arquivado : Concluído
-  Arquivado --> [*]
+  [*] --> Registrando : Cadastrado no sistema
+  Registrando --> Anunciando : Associado a anúncio
+  Anunciando --> Negociando : Negociação ativa
+  Negociando --> Vendendo : Confirmação da venda
+  Vendendo --> Arquivando : Concluído
+  Arquivando --> [*]
 
-  Registrado --> Inativo : Nunca anunciado
-  Inativo --> [*]
-  Anunciado --> Inativo : Anúncio removido
+  Registrando --> Inativando : Nunca anunciado
+  Inativando --> [*]
+  Anunciando --> Inativando : Anúncio removido
 }
 
 state "Usuário" as Usuario {
-  [*] --> Registrado : Cadastro
-  Registrado --> Ativo : Login confirmado
-  Ativo --> Editando : Alteração de perfil
-  Editando --> Ativo : Confirmação de edição
-  Ativo --> Inativo : Pausar conta
-  Inativo --> Ativo : Reativar
-  Ativo --> Excluido : Deletar conta
-  Excluido --> [*]
+  [*] --> Registrando : Cadastro
+  Registrando --> Ativando : Login confirmado
+  Ativando --> Editando : Alteração de perfil
+  Editando --> Ativando : Confirmação de edição
+  Ativando --> Inativando : Pausar conta
+  Inativando --> Ativando : Reativar
+  Ativando --> Excluindo : Deletar conta
+  Excluindo --> [*]
 }
 
 state "Pagamento" as Pagamento {
-  [*] --> Pendente : Início do processo
-  Pendente --> EmProcessamento : Processando dados
-  EmProcessamento --> Confirmado : Confirmação pelo sistema
-  Confirmado --> Concluido : Repasse efetuado
-  Concluido --> [*]
+  [*] --> Iniciando : Início do processo
+  Iniciando --> Processando : Processando dados
+  Processando --> Confirmando : Confirmação pelo sistema
+  Confirmando --> Concluindo : Repasse efetuado
+  Concluindo --> [*]
 
-  Pendente --> Cancelado : Erro ou desistência
-  Cancelado --> [*]
+  Iniciando --> Cancelando : Erro ou desistência
+  Cancelando --> [*]
 }
 
 state "Negociação" as Negociacao {
-  [*] --> Iniciada : Contato inicial
-  Iniciada --> EmAndamento : Envio de mensagens
-  EmAndamento --> Aceita : Termos definidos
-  Aceita --> Finalizada : Venda confirmada
-  Finalizada --> [*]
+  [*] --> Iniciando : Contato inicial
+  Iniciando --> Desenvolvendo : Envio de mensagens
+  Desenvolvendo --> Aceitando : Termos definidos
+  Aceitando --> Finalizando : Venda confirmada
+  Finalizando --> [*]
 
-  EmAndamento --> Cancelada : Desistência
-  Cancelada --> [*]
+  Desenvolvendo --> Cancelando : Desistência
+  Cancelando --> [*]
 }
 @enduml
 ```
