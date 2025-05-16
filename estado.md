@@ -55,7 +55,7 @@ state "Negociação" as Negociacao {
   Iniciando --> Desenvolvendo : Envio de mensagens
   Desenvolvendo --> Aceitando : Termos definidos
   Aceitando --> Finalizando : Venda confirmada
-  Finalizando --> [*] : Negociação encerrada
+  Finalizando --> [*] : Negociação finalizada
 
   Desenvolvendo --> Cancelando : Desistência
   Cancelando --> [*] : Negociação cancelada
