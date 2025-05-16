@@ -6,7 +6,6 @@
 - Luís Henrique Ribeiro Fernandes RA: 10420079
 - Vinícius Brait Lorimier RA: 10420046
 
-
 ```plantuml
 @startuml
 
@@ -16,12 +15,12 @@ state "Anúncio" as Anuncio {
   Publicando --> Negociando : Negociação iniciada
   Negociando --> Vendendo : Confirmação de pagamento
   Vendendo --> Arquivando : Finalização
-  Arquivando --> [*]
+  Arquivando --> [*] : Encerrar anúncio
 
   Publicando --> Editando : Editar conteúdo
   Editando --> Publicando : Salvar edição
   Publicando --> Removendo : Remoção manual
-  Removendo --> [*]
+  Removendo --> [*] : Anúncio removido
 }
 
 state "Veículo" as Veiculo {
@@ -30,10 +29,10 @@ state "Veículo" as Veiculo {
   Anunciando --> Negociando : Negociação ativa
   Negociando --> Vendendo : Confirmação da venda
   Vendendo --> Arquivando : Concluído
-  Arquivando --> [*]
+  Arquivando --> [*] : Arquivar veículo
 
   Registrando --> Inativando : Nunca anunciado
-  Inativando --> [*]
+  Inativando --> [*] : Encerrado sem anúncio
   Anunciando --> Inativando : Anúncio removido
 }
 
@@ -45,7 +44,7 @@ state "Usuário" as Usuario {
   Ativando --> Inativando : Pausar conta
   Inativando --> Ativando : Reativar
   Ativando --> Excluindo : Deletar conta
-  Excluindo --> [*]
+  Excluindo --> [*] : Conta excluída
 }
 
 state "Pagamento" as Pagamento {
@@ -53,10 +52,10 @@ state "Pagamento" as Pagamento {
   Iniciando --> Processando : Processando dados
   Processando --> Confirmando : Confirmação pelo sistema
   Confirmando --> Concluindo : Repasse efetuado
-  Concluindo --> [*]
+  Concluindo --> [*] : Pagamento concluído
 
   Iniciando --> Cancelando : Erro ou desistência
-  Cancelando --> [*]
+  Cancelando --> [*] : Pagamento cancelado
 }
 
 state "Negociação" as Negociacao {
@@ -64,10 +63,11 @@ state "Negociação" as Negociacao {
   Iniciando --> Desenvolvendo : Envio de mensagens
   Desenvolvendo --> Aceitando : Termos definidos
   Aceitando --> Finalizando : Venda confirmada
-  Finalizando --> [*]
+  Finalizando --> [*] : Negociação finalizada
 
   Desenvolvendo --> Cancelando : Desistência
-  Cancelando --> [*]
+  Cancelando --> [*] : Negociação cancelada
 }
+
 @enduml
 ```
