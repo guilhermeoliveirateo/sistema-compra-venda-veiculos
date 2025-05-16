@@ -19,7 +19,7 @@ state "Anúncio" as Anuncio {
 
   Publicando --> Editando : Editar conteúdo
   Editando --> Publicando : Salvar edição
-  Publicando --> Removendo : Remoção manual
+  Publicando --> Removendo : Remover
   Removendo --> [*] : Anúncio removido
 }
 
