@@ -14,7 +14,7 @@ state "Anúncio" as Anuncio {
   Criando --> Publicando : Publicar
   Publicando --> Negociando : Negociação iniciada
   Negociando --> Vendendo : Confirmação de pagamento
-  Vendendo --> Arquivando : Finalização
+  Vendendo --> Arquivando : Finalizado
   Arquivando --> [*] : Encerrar anúncio
 
   Publicando --> Editando : Editar conteúdo
