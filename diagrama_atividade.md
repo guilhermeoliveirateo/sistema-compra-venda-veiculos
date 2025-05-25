@@ -1,71 +1,86 @@
-```plantuml
-@startuml
-start
+# Diagrama de Atividades
 
-:Usuário acessa o sistema;
-partition Autenticação {
-  :Fazer login;
-  if (Senha válida?) then (Sim)
-    :Entrar no sistema;
-  else (Não)
+# Grupo
+
+- Guilherme Teodoro de Oliveira RA: 10425362
+- Luís Henrique Ribeiro Fernandes RA: 10420079
+- Vinícius Brait Lorimier RA: 10420046
+
+
+``` plantuml
+@startuml
+
+|Usuário|
+start
+:Realizar Login;
+if (Login válido?) then (Sim)
+    :Acessar sistema;
+else (Não)
     :Exibir mensagem de erro;
     stop
-  endif
-}
+endif
 
 partition Perfil {
-  :Criar perfil;
-  :Editar perfil;
+    if (Perfil existente?) then (Sim)
+        :Editar perfil;
+        :Excluir perfil (se desejar);
+    else (Não)
+        :Criar perfil;
+    endif
 }
 
-partition Anúncios {
-  :Criar anúncio;
-  :Adicionar descrição;
-  :Adicionar preço do veículo;
-  :Adicionar fotos;
-  :Adicionar localização;
-
-  :Editar anúncio;
-  :Alterar descrição;
-  :Alterar preço;
-  :Alterar fotos;
-  :Alterar localização;
-
-  :Remover anúncio;
-  :Adicionar motivo da exclusão;
+partition Anúncio {
+    if (É vendedor?) then (Sim)
+        :Criar anúncio;
+        fork
+            :Adicionar descrição;
+            :Adicionar fotos;
+            :Adicionar localização;
+            :Adicionar preço;
+        fork again
+            :Editar anúncio;
+            :Alterar descrição;
+            :Alterar fotos;
+            :Alterar localização;
+            :Alterar preço;
+            :Remover anúncio (se desejar);
+        end fork
+    endif
 }
 
-partition Navegação {
-  :Buscar veículo;
-  :Visualizar detalhes;
-  :Acompanhar status;
-}
-
-partition Negociação {
-  :Negociar condições de venda;
-  :Enviar mensagens;
+partition Compra {
+    if (É comprador?) then (Sim)
+        :Buscar veículo;
+        :Visualizar detalhes;
+        :Negociar condições de venda;
+        :Enviar mensagens;
+    endif
 }
 
 partition Venda {
-  :Definir veículo como vendido;
-  :Verificar pagamento;
-  :Notificar confirmação;
-  :Alterar status do veículo;
+    if (Negociação concluída?) then (Sim)
+        :Definir veículo como vendido;
+        :Verificar pagamento;
+        if (Pagamento confirmado?) then (Sim)
+            :Alterar status do veículo;
+            :Notificar confirmação;
+        else (Não)
+            :Cancelar venda;
+        endif
+    endif
 }
 
 partition Histórico {
-  :Consultar histórico de vendas;
-  :Visualizar detalhes por venda;
-
-  :Consultar histórico de compras;
-  :Visualizar detalhes por compra;
+    :Consultar histórico de compras;
+    :Consultar histórico de vendas;
 }
 
 partition Administração {
-  :Gerenciar usuários;
-  :Gerenciar anúncios;
+    :Gerenciar usuários;
+    :Gerenciar anúncios;
 }
 
 stop
+
 @enduml
 ```
