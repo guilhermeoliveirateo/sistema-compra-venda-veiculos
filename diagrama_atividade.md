@@ -43,7 +43,7 @@ partition Anúncio {
             :Alterar fotos;
             :Alterar localização;
             :Alterar preço;
-            :Remover anúncio (se desejar);
+            :Remover anúncio;
         end fork
     endif
 }
