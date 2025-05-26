@@ -37,14 +37,15 @@ partition Anúncio {
             :Adicionar fotos;
             :Adicionar localização;
             :Adicionar preço;
-        fork again
-            :Editar anúncio;
+        end fork
+        :Editar anúncio;
+        fork
             :Alterar descrição;
             :Alterar fotos;
             :Alterar localização;
             :Alterar preço;
-            :Remover anúncio;
         end fork
+        :Remover anúncio;
     endif
 }
 
