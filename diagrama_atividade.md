@@ -23,7 +23,7 @@ endif
 partition Perfil {
     if (Perfil existente?) then (Sim)
         :Editar perfil;
-        :Excluir perfil (se desejar);
+        :Excluir perfil;
     else (Não)
         :Criar perfil;
     endif
