@@ -25,9 +25,3 @@ de busca e histórico de negociações.
 - Histórico de Negociações: Acompanhamento das transações anteriores.
 
 - Administração do Sistema: Controle de anúncios, usuários e segurança da plataforma.
-
-# 👥 Grupo
-
-- Guilherme Teodoro de Oliveira RA: 10425362
-- Luís Henrique Ribeiro Fernandes RA: 10420079
-- Vinícius Brait Lorimier RA: 10420046
